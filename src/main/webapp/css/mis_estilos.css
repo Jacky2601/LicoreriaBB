@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+
+#login {
+	margin-left: 25%;
+	width: 50%;
+	margin-top: 10%;
+}
+
+#login>h1 {
+	text-align: center;
+}
+
+#registro {
+	margin-left: 25%;
+	width: 50%;
+	margin-top: 5%;
+} 
