@@ -36,14 +36,19 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("Opcion seleccionada en el boton: " + accion);
 
 		switch (accion) {
-		case "registrar":
-			registrar(request, response);
-			break;
 		case "login":
 			login(request, response);
 			break;
+		case "registrar":
+			registrar(request, response);
+			break;
+			
+		case "logout":
+			logout(request, response);
+			break;
 
 		default:
+			
 			break;
 		}
 	}
@@ -51,11 +56,16 @@ public class LoginServlet extends HttpServlet {
 	
 	
 
+	private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		request.getSession().invalidate();	
+		response.sendRedirect("login.jsp");
+	}
+
 	private void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		System.out.println("Entro a la opcion Login...");
 
 		String usuario, password;
-
+ 
 		usuario = request.getParameter("txtUsuario");
 		password = request.getParameter("txtPassword");
 		
@@ -87,12 +97,43 @@ public class LoginServlet extends HttpServlet {
 	private void registrar(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		System.out.println("Ingresó al proceso de registrar cuenta...");
 		
+		String nombre, apellidoPat, apellidoMat, usuario, password; 
+		
 		// Para los datos del registro de cuenta
-		String nombre = request.getParameter("txtNombre");
-		String apellidoPat = request.getParameter("txtApellidoPat");
-		String apellidoMat = request.getParameter("txtApellidoMat");
-		String usuario = request.getParameter("txtUsuario");
-		String password = request.getParameter("txtPassword");
+		nombre = request.getParameter("txtNombre");
+		apellidoPat = request.getParameter("txtApellidoPat");
+		apellidoMat = request.getParameter("txtApellidoMat");
+		usuario = request.getParameter("txtUsuario");
+		password = request.getParameter("txtPassword");
+				
+		if (nombre == null || apellidoPat == null || apellidoMat == null || usuario == null || password == null) {
+	        // Manejar el error o redireccionar a una página de error
+	        response.sendRedirect("registro.jsp");
+	        return;
+	    }
+		
+		
+		GestionUsuario gu = new GestionUsuario();
+		Usuario u = new Usuario();
+		 	u.setNombre(nombre);
+		    u.setApellidoPat(apellidoPat);
+		    u.setApellidoMat(apellidoMat);
+		    u.setUsuario(usuario);
+		    u.setClave(password);
+		    
+		    int resultadoRegistro = gu.registrar(u);
+		    
+		    if (resultadoRegistro > 0) {
+		        // Registro exitoso, redirigir a una página de éxito o mostrar un mensaje de éxito.
+		    	boolean registroExitoso = true;
+		    	request.getSession().setAttribute("registroExitoso", registroExitoso);
+		    	response.sendRedirect("principal.jsp");
+		    } else {
+		        // Ocurrió un error durante el registro, mostrar un mensaje de error.
+		    	 request.getSession().setAttribute("mensaje", "<div class='alert alert-danger' role='alert'>\r\n"
+							+ "  Error durante el registro!!!\r\n" + "</div>");	
+		    }
+		
 
 		System.out.println(nombre + " " + apellidoPat + " " + apellidoMat + " " + usuario + " " + password);
 		

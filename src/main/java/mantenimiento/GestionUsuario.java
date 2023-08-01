@@ -52,6 +52,7 @@ public class GestionUsuario implements UsuarioInterface{
 
 	@Override
 	public int registrar(Usuario u) {
+		
 		int rs = 0; //0 --> Error
 		
 		//Plantilla
@@ -68,8 +69,8 @@ public class GestionUsuario implements UsuarioInterface{
 			pst.setString(4, u.getApellidoMat());
 			pst.setString(5, u.getUsuario());
 			pst.setString(6, u.getClave());
-			pst.setInt(7, u.getTipo());
-			pst.setInt(8, u.getEstado());
+			//pst.setInt(7, u.getTipo());
+			//pst.setInt(8, u.getEstado());
 			
 			//ejecutar 
 			
