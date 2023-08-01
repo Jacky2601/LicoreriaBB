@@ -18,8 +18,37 @@ public class Usuario {
 				+ ", apellidoMat=" + apellidoMat + ", usuario=" + usuario + ", clave=" + clave + ", tipo=" + tipo
 				+ ", estado=" + estado + "]";
 	}
+	
+	
+	
 
+	public Usuario() {
+		
+	}
 
+	public Usuario(int idUsuario, String nombre, String apellidoPat, String apellidoMat, String usuario, String clave) {
+		this.idUsuario = idUsuario;
+		this.nombre = nombre;
+		this.apellidoPat = apellidoPat;
+		this.apellidoMat = apellidoMat;
+		this.usuario = usuario;
+		this.clave = clave;
+	}
+	
+	
+	public Usuario(String nombre, String apellidoPat, String apellidoMat, String usuario, String clave, int tipo,
+			int estado) {
+		super();
+		this.nombre = nombre;
+		this.apellidoPat = apellidoPat;
+		this.apellidoMat = apellidoMat;
+		this.usuario = usuario;
+		this.clave = clave;
+		this.tipo = tipo;
+		this.estado = estado;
+	}
+
+	
 	public int getIdUsuario() {
 		return idUsuario;
 	}
