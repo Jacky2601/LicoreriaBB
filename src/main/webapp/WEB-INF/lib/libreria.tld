@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.0</jspversion>
+	<shortname>tools</shortname>
+	
+	<tag>
+		<name>menuPrincipal</name>
+		<tagclass>etiquetas.MenuPrincipalTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Muestra las opciones del menu Principal del proyecto</info>
+		<attribute>
+			<name>tipo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>comboCategoria</name>
+		<tagclass>etiquetas.CboCategoriaTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Muestra las opciones de un combo con el contenido de la tabla Categoria</info>
+	</tag>
+	
+	<tag>
+		<name>comboCategoriaConParametro</name>
+		<tagclass>etiquetas.CboCategoriaConParametroTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Muestra las opciones de un combo con el contenido de la tabla Categoria, 
+		seleccionado la opción pasada por parámetros
+		</info>
+		
+		<attribute>
+			<name>idCat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>comboEstado</name>
+		<tagclass>etiquetas.CboEstadoTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Muestra las opciones del combo Estado, 
+		seleccionado la opción pasada por parámetros
+		</info>
+		
+		<attribute>
+			<name>estado</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- otras etiquetas de la librería -->
+</taglib>
