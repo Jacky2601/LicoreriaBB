@@ -81,15 +81,18 @@ public class DistritoDeliveryServlet extends HttpServlet {
 
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("ingreso al proceso listar");
-
-		ArrayList<DistritoDelivery> lista = new GestionDistritoDelivery().listado();
+		
+		
+		GestionDistritoDelivery gd = new GestionDistritoDelivery();
+		ArrayList<DistritoDelivery> listado = gd.listado(); 
 
 		// enviar el listado al jsp --> atributo
-		request.setAttribute("lstProductos", lista);
+		request.setAttribute("listado", listado);
 
 		// redireccionando a la pagina listado
-		request.getRequestDispatcher("listado.jsp").forward(request, response);
-
+		request.getRequestDispatcher("crudDistritoDelivery.jsp").forward(request, response);
+		
+		
 	}
 
 	private void eliminar(HttpServletRequest request, HttpServletResponse response)

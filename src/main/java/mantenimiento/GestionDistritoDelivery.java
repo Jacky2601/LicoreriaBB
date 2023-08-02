@@ -110,8 +110,7 @@ public class GestionDistritoDelivery implements DistritoDeliveryInterface{
 			con = MySQLConexion8.getConexion();
 			String sql = "select * from tb_distritos";
 			pst = con.prepareStatement(sql);
-			
-			
+						
 			//ejecutar 
 			
 			rs = pst.executeQuery();
@@ -119,11 +118,10 @@ public class GestionDistritoDelivery implements DistritoDeliveryInterface{
 			lista = new ArrayList<DistritoDelivery>();
 			while (rs.next()) {
 				DistritoDelivery d = new DistritoDelivery(
-										rs.getInt("idDistrito"), 
-										rs.getString("nombreDistrito"),
+										rs.getInt("id_distrito"), 
+										rs.getString("nom_distrito"),
 										rs.getInt("estado"));
-				
-				
+								
 				lista.add(d);
 			}
 			
