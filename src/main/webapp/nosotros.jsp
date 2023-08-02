@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Licorería Big Bang</title>
-    <link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
-</head>
+	<meta charset="UTF-8">
+	<title>Sobre Nosotros</title>
+	<link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
+	</head>
 <body>
-    <header class="header">
+	<header class="header">
         <div class="logo-container">
         	<a href="Index.jsp">
             <img  class="logo" src="imagenes/LOGOLICO.jpeg"  alt=" ">
@@ -22,7 +22,6 @@
             <a href="locales.jsp">
             LOCALES  
                 <img class="location-icon" src="imagenes/ubica.png" alt="">
-                
             </a>
         </div>
         <div class="login-container">
@@ -37,32 +36,38 @@
             </a>
         </div>
     </header>
-    <nav class="navbar">
-        <ul>
-            <li><a href="Index.jsp">INICIO</a></li>
-            <li><a href="vinos.jsp">VINOS</a></li>
-            <li><a href="licores.jsp">LICORES</a></li>
-            <li><a href="nosotros.jsp">NOSOTROS</a></li>
-        </ul>
-    </nav>
-    <section class="panel">
-        <img class="panel-image" id="imgcab" src="imagenes/IMG8.jpg" alt="Panel de Imagen">
-    </section>
-    <section class="products-section">
-        <!-- Aquí irá la sección de productos -->
-        <a href="detalleproducto.jsp">
-        <img class="panel-image" src="imagenes/produ.jpg" alt="Panel de Imagen">
-        </a>
-    </section>
-    <section class="product-panel">
-    	<a href="detalleproducto.jsp">
-        <img class="panel-image" src="imagenes/BAN1.jpg" alt="Panel de Imagen">
-        </a>
-    </section>
-    <div class="buttons">
-        <button class="buy-button">COMPRAR</button>
-        <button class="view-more-button">VER MÁS</button>
-    </div>
+    <h1 class="usuarioh1">SOBRE NOSOTROS</h1>
+    <h2 class="texto2">Misión</h2>
+    <p class="parrafo1">Nuestra misión en "Licorería BIG BANG" es ofrecer a nuestros 
+    clientes una experiencia única en el mundo de las bebidas 
+    alcohólicas, proporcionando una amplia selección de productos 
+    de la más alta calidad. Nos comprometemos a brindar un servicio 
+    personalizado y cercano, satisfaciendo las necesidades y 
+    preferencias de nuestros clientes. Buscamos ser reconocidos 
+    como líderes en el mercado, destacando por nuestra excelencia 
+    en el servicio al cliente y la diversidad de nuestras propuestas, 
+    siempre con responsabilidad y respeto hacia el consumo 
+    responsable.
+    </p>
+    
+    <h2 class="texto2">Visión</h2>
+    <p class="parrafo1">En "Licorería BIG BANG" aspiramos a convertirnos en la licorería 
+    de preferencia para nuestros clientes, superando sus expectativas y 
+    sorprendiéndolos con nuestro catálogo de bebidas y promociones exclusivas. 
+    Buscamos ser reconocidos por nuestra innovación, calidad y pasión por el 
+    mundo de las bebidas, ofreciendo una experiencia de compra en línea inigualable. 
+    Nuestra visión es ser líderes en el mercado digital, contribuyendo al crecimiento 
+    y desarrollo del sector de licorerías en línea, siempre guiados por nuestros 
+    valores de integridad, responsabilidad y compromiso con la satisfacción del cliente.
+    </p>
+    
+    
+   	 	<div class="regreso2">
+   	 	<a href="Index.jsp">
+        <button class="view-more-button">REGRESAR</button>
+    	</a>
+		</div>
+	
     <footer class="footer">
         <div class="disclaimer-bar">
             <p class="disclaimer-text">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>
