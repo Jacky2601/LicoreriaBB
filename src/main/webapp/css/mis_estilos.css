@@ -15,3 +15,232 @@
 	width: 50%;
 	margin-top: 5%;
 } 
+
+
+
+/* Estilos para la cabecera */
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+}
+
+.logo {
+    height: 90px;
+    width: 90%;
+    margin-left: 20px;
+}
+
+.search-container {
+    margin-left: 100px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    padding: 15px 70px; /* Ajusta el padding para hacer el elemento más ancho */
+    border: 3px solid #ccc;
+    border-radius: 20px;
+}
+
+/* Estilos para los enlaces */
+.locations-container a,
+.login-container a,
+.cart-container a {
+    text-decoration: none;
+    color: black; /* Opcional: establecer color de texto negro para los enlaces */
+}
+
+/* Resto de estilos que ya tenías */
+.locations-container,
+.login-container,
+.cart-container {
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.location-icon,
+.login-icon {
+    height: 30px;
+    width: auto;
+    margin-right: 7px;
+}
+
+.cart-icon{
+	height: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+body {
+	font-family: "Arial black", sans-serif;
+	width: 100%;
+	background-color: #0e0e0e;
+	background-repeat: no-repeat;
+	background-size: cover;
+    padding: 0px;
+    margin: 0px;
+	
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 0px;
+  	position: sticky;
+  	top: 0;
+}
+
+.navbar ul {
+	
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* Estilos para el panel de imagen */
+.panel {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.panel-image {
+    width: 100%;
+    max-height: 400px;
+}
+
+/* Estilos para la sección de productos */
+.products-section {
+    /* Agrega aquí los estilos para la sección de productos */
+}
+
+/* Estilos para el panel de producto */
+.product-panel {
+    /* Agrega aquí los estilos para el panel de producto */
+}
+
+/* Estilos para los botones */
+.buttons {
+    text-align: center;
+    margin: 20px 0;
+    
+}
+
+.buy-button, .view-more-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #d8d8d8;
+    padding: 0px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    padding: 10px;
+    justify-content: center; /* Centrar el contenido horizontalmente */
+    align-items: center;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.logofooter{
+	height: 180px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.disclaimer-bar {
+    background-color: #606060;
+    color: white;
+    padding: 15px;
+    font-family: "Arial Black", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.disclaimer-text {
+    margin: 1px;
+}
+
+.contact-bar {
+    margin-top: 10px;
+}
+
+.contact-text {
+    font-weight: bold;
+    margin: 0;
+}
+
+.contact-info {
+    margin: 5px 0;
+}
+
+.social-media-bar {
+    margin-top: 10px;
+}
+
+.redes {
+	padding: 0px 0px;
+	display: inline;
+	left: 35%;
+}
+
+
+#r1{
+    width: 50px;
+    height: 50px;
+    position: relative;
+   
+}
+#r2{
+    width: 50px;
+    height: 50px;
+    position: relative;
+   
+    
+}
+#r3{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    
+    
+}
+#r4{
+    width: 50px;
+    height: 50px;
+    position: relative;
+     
+}
+
+
+/* Agrega aquí los estilos para los íconos de redes sociales */

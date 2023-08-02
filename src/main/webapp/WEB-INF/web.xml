@@ -21,6 +21,7 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+
     <display-name>DistritoDeliveryServlet</display-name>
     <servlet-name>DistritoDeliveryServlet</servlet-name>
     <servlet-class>servlets.DistritoDeliveryServlet</servlet-class>
@@ -28,5 +29,14 @@
   <servlet-mapping>
     <servlet-name>DistritoDeliveryServlet</servlet-name>
     <url-pattern>/DistritoDeliveryServlet</url-pattern>
+
+    <display-name>ProductoServlet</display-name>
+    <servlet-name>ProductoServlet</servlet-name>
+    <servlet-class>servlets.ProductoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductoServlet</servlet-name>
+    <url-pattern>/ProductoServlet</url-pattern>
+
   </servlet-mapping>
 </web-app>
