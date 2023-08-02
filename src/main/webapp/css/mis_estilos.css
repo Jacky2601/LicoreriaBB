@@ -3,17 +3,14 @@
 #login {
 	margin-left: 25%;
 	width: 50%;
-	margin-top: 10%;
+	margin-top: 1%;
 }
 
-#login>h1 {
-	text-align: center;
-}
 
 #registro {
 	margin-left: 25%;
 	width: 50%;
-	margin-top: 5%;
+	margin-top: 1%;
 } 
 
 
@@ -147,7 +144,7 @@ body {
 
 .buy-button, .view-more-button {
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #b81f1f;
     color: white;
     border: none;
     border-radius: 5px;
@@ -242,5 +239,65 @@ body {
      
 }
 
+/*AQUI ESTAN LOS DEL LOGIN*/
 
-/* Agrega aquí los estilos para los íconos de redes sociales */
+.formulariologin {
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos adicionales para el contenido del formulario, como etiquetas, campos de entrada, botones, etc. */
+.grupito {
+    margin-bottom: 10px;
+}
+
+.btn {
+    /* Estilos para los botones (puedes ajustarlos según sea necesario) */
+    padding: 10px 20px;
+    border-radius: 10px;
+    
+}
+
+.usuarioh1 {
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+
+.regreso1{
+	padding: 10px 40px;
+    border-radius: 5px;
+    position: relative;
+    text-align: right;
+    margin: 50px 0;
+    color: white;
+    
+}
+
+.texto2 {
+    color: white; /* Cambiar el color del texto a blanco */
+    text-align: left; /* Alinear el texto a la izquierda */
+    margin-left: 150px; /* Ajustar el margen izquierdo para separar del borde */
+    margin-bottom: 20px; /* Agregar espacio de 20px debajo del párrafo */
+}
+
+.parrafo1 {
+    color: white; /* Cambiar el color del texto a blanco */
+    text-align: justify; /* Justificar el texto */
+    margin: 30px 150px; /* Agregar un margen superior e inferior y ajustar el margen izquierdo */
+    font-size: 20px; /* Tamaño de letra 20px */
+    margin-bottom: 50px; /* Agregar espacio de 20px debajo del párrafo */
+}
+
+.regreso2{
+	padding: 30px 150px;
+    border-radius: 5px;
+    position: relative;
+    text-align: right;
+    margin: 50px 0;
+    color: white;
+    
+}
