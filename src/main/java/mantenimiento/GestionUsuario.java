@@ -16,7 +16,7 @@ public class GestionUsuario implements UsuarioInterface{
 		// Plantilla de BD
 		Connection con = null;
 		PreparedStatement pst = null;
-		ResultSet rs = null;
+		ResultSet rs = null; 
 		
 		try {
 			con = MySQLConexion8.getConexion();
