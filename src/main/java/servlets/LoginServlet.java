@@ -79,7 +79,7 @@ public class LoginServlet extends HttpServlet {
 			
 			request.getSession().setAttribute("u", u); // el atributo esta a nivel de sesion
 			
-			request.getRequestDispatcher("principal.jsp").forward(request, response);
+			request.getRequestDispatcher("Index.jsp").forward(request, response);
 		
 
 	    } else {
@@ -127,7 +127,7 @@ public class LoginServlet extends HttpServlet {
 		        // Registro exitoso, redirigir a una página de éxito o mostrar un mensaje de éxito.
 		    	boolean registroExitoso = true;
 		    	request.getSession().setAttribute("registroExitoso", registroExitoso);
-		    	response.sendRedirect("principal.jsp");
+		    	response.sendRedirect("Index.jsp");
 		    } else {
 		        // Ocurrió un error durante el registro, mostrar un mensaje de error.
 		    	 request.getSession().setAttribute("mensaje", "<div class='alert alert-danger' role='alert'>\r\n"

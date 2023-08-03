@@ -40,8 +40,8 @@
     <nav class="navbar">
         <ul>
             <li><a href="Index.jsp">INICIO</a></li>
-            <li><a href="vinos.jsp">VINOS</a></li>
-            <li><a href="licores.jsp">LICORES</a></li>
+            <li><a href="Index.jsp">VINOS</a></li>
+            <li><a href="Index.jsp">LICORES</a></li>
             <li><a href="nosotros.jsp">NOSOTROS</a></li>
         </ul>
     </nav>
@@ -50,12 +50,12 @@
     </section>
     <section class="products-section">
         <!-- Aquí irá la sección de productos -->
-        <a href="detalleproducto.jsp">
+        <a href="Index.jsp">
         <img class="panel-image" src="imagenes/produ.jpg" alt="Panel de Imagen">
         </a>
     </section>
     <section class="product-panel">
-    	<a href="detalleproducto.jsp">
+    	<a href="Index.jsp">
         <img class="panel-image" src="imagenes/BAN1.jpg" alt="Panel de Imagen">
         </a>
     </section>
