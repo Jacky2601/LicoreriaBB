@@ -108,7 +108,7 @@ public class GestionDistritoDelivery implements DistritoDeliveryInterface{
 		
 		try {
 			con = MySQLConexion8.getConexion();
-			String sql = "select * from tb_distritos";
+			String sql = "select * from tb_distritos where estado = 1";
 			pst = con.prepareStatement(sql);
 						
 			//ejecutar 
