@@ -110,7 +110,6 @@
 					<tr>
 						<th>Código del Distrito</th>
 						<th>Nombre del Distrito</th>
-						<th>Estado</th>
 					</tr>
 
 					<%
@@ -123,7 +122,6 @@
 					<tr>
 						<td><%=d.getIdDistrito()%></td>
 						<td><%=d.getNombreDistrito()%></td>
-						<td><%=d.getEstado()%></td>
 					</tr>
 					<%
 					}
