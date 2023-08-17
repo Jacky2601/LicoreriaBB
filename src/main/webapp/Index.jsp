@@ -1,14 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Licorería Big Bang</title>
     <link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
 </head>
 <body>
-    <header class="header">
+<header class="header">
         <div class="logo-container">
         	<a href="Index.jsp">
             <img  class="logo" src="imagenes/LOGOLICO.jpeg"  alt=" ">
@@ -26,17 +25,26 @@
             </a>
         </div>
         <div class="login-container">
-            <a href="login.jsp">
-            INGRESA O REGÍSTRATE  
-                <img class="login-icon" src="imagenes/user.png" alt="Ingresar o Registrarse">
-            </a>
-            </div>
+    	<% if (session.getAttribute("u") != null) { %>
+        	<div id="ingresado1">
+	            <p> <strong> ${u.getNombre() } ${u.apellidoPat } ${u.apellidoMat }</strong></p>
+	            <button class="nav-item active">
+	                <a class="nav-link" href="crudUsu?btnAccion=logout"> Cerrar Sesión</a>
+	            </button>
+	            <span class="sr-only"></span>
+        	</div>
+    	<% } else { %>
+	        <a href="login.jsp" id="ingreso1"> INGRESA O REGÍSTRATE 
+	            <img class="login-icon" src="imagenes/user.png" alt="Ingresar o Registrarse">
+	        </a>
+    	<% } %>
+		</div>
         <div class="cart-container">
-            <a href="carrito.html">
+            <a href="carrito.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>
-    </header>
+</header>
     <nav class="navbar">
         <ul>
             <li><a href="Index.jsp">INICIO</a></li>
@@ -63,7 +71,7 @@
         <button class="buy-button">COMPRAR</button>
         <button class="view-more-button">VER MÁS</button>
     </div>
-    <footer class="footer">
+<footer class="footer">
         <div class="disclaimer-bar">
             <p class="disclaimer-text">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>
         </div>
@@ -92,7 +100,23 @@
            <p> 
            © 2023 BigBang.com.pe - Todos los derechos reservados</br>
         </p>
-    </footer>
+</footer>
 </body>
 </html>
 <script src="js/carrusel.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var userLoggedIn = <%= session.getAttribute("u") != null %>;
+
+        var ingresoLink = document.getElementById("ingreso1");
+        var ingresadoDiv = document.getElementById("ingresado1");
+
+        if (userLoggedIn) {
+            ingresoLink.style.display = "none";
+            ingresadoDiv.style.display = "block";
+        } else {
+            ingresoLink.style.display = "block";
+            ingresadoDiv.style.display = "none";
+        }
+    });
+</script>

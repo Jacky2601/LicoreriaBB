@@ -1,12 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="model.*"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<title>Menu Administrador</title>
-	<link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
-	</head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Reporte Pedidos</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
+</head>
 <body>
 <header class="header">
         <div class="logo-container">
@@ -46,48 +49,82 @@
             </a>
         </div>
 </header>
-    <h1 class="usuarioh1">MENU ADMINISTRADOR</h1>
-    <h2 class="texto3">MANTENIMIENTOS</h2>
-    
-    <div class="botones3">
-   	 	<a href="manteDistritos.jsp">
-        <button class="view-more-button2">MANTENIMIENTO DE <br>DISTRITOS DELIVERY</button>
-    	</a>
-	</div>
-	<div class="botones3">
-	<a href="manteProductos.jsp">
-        <button class="view-more-button2">MANTENIMIENTO DE <br>PRODUCTOS</button>
-    	</a>
-    </div>
-    <div class="botones3">
-	<a href="manteUsuarios.jsp">
-        <button class="view-more-button2">MANTENIMIENTO DE <br>USUARIOS</button>
-    	</a>
-    </div>
-    
-    <h2 class="texto3">REPORTES</h2>
-    
-    <div class="botones3">
-	<a href="reportProductos.jsp">
-        <button class="view-more-button2">REPORTE DE PRODUCTOS</button>
-    	</a>
-    </div>
-    <div class="botones3">
-	<a href="reportPedidos.jsp">
-        <button class="view-more-button2">REPORTE DE PEDIDOS</button>
-    	</a>
-    </div>
-    
-    <br>
-    <br>
-    
-    
-   	 	<div class="botones3">
-   	 	<a href="Index.jsp">
-        <button class="view-more-button">SALIR</button>
-    	</a>
-		</div>
 	
+	<div class="reporte" id="reporte">
+		<div class="partereporte">
+			<h2 >REPORTE DE PEDIDOS</h2>
+			
+			<form action="pedido" method="post">
+
+				<div class="fechas">
+					<label for="desde">DESDE:</label> 
+					<input type="date" id="desde" name="desde"> 
+					<label for="hasta">HASTA:</label> 
+					<input type="date" id="hasta" name="hasta">
+				</div>
+				<div class="botonesrep">
+
+					<button class="botonesreporte" id="consultar" type="submit" name="accion"
+							value="reporte">CONSULTAR</button>
+					<button class="botonesreporte" id="imprime" type="submit" name="accion"
+							value="reporte">IMPRIMIR PDF</button>
+				</div>
+			</form>
+
+			<div class="container mt-3">
+
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th style="width: 5%; text-align: center;">Código</th>
+							<th style="width: 15%; text-align: left;">Cliente</th>
+							<th style="width: 15%; text-align: left;">Direccion Cliente</th>
+							<th style="width: 15%; text-align: left;">Nombre Producto</th>
+							<th style="width: 5%; text-align: center;">Cantidad</th>
+							<th style="width: 5%; text-align: right;">Precio</th>
+							<th style="width: 10%; text-align: right;">Subtotal</th>
+							<th style="width: 10%; text-align: center;">Estado</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%--
+						ArrayList<Pedido> listado = (ArrayList<Pedido>) request.getAttribute("listado");
+
+						if (listado != null) {
+							for (Pedido p : listado) {
+						--%>
+						<%--
+						<tr>
+							<td style="text-align: center;"><%=p.getIdPed()%></td>
+							<td><%=p.getNombreCliente()%></td>
+							<td><%=p.getDireccionCliente()%></td>
+							<td><%=p.getNombreProducto()%></td>
+							<td style="text-align: center;"><%=p.getCantidad()%></td>
+							<td style="text-align: right;"><%=p.getPrecio()%></td>
+							<td style="text-align: right;"><%=p.getSubtotal()%></td>
+							<td style="text-align: center;"><%=p.getEstadoPedido()%></td>
+						</tr>
+						<%
+						}
+						}
+						--%>
+					</tbody>
+				</table>
+			</div>
+
+			<!--table-->
+			<!-- Tu tabla de reporte aquí -->
+			<!--/table-->
+		</div>
+	</div>
+
+
+	<div class="regreso3">
+		<a href="Menuadministrador.jsp">
+			<button class="view-more-button">REGRESAR</button>
+		</a>
+	</div>
+
 <footer class="footer">
         <div class="disclaimer-bar">
             <p class="disclaimer-text">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>
@@ -121,3 +158,4 @@
 </body>
 </html>
 <script src="js/carrusel.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,16 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="model.DistritoDelivery"%>
 <%@page import="mantenimiento.GestionDistritoDelivery"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Usuario"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Distritos</title>
-	<link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
+	<title>Mantenimiento Distritos</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-	
+	<link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
 </head>
 <body>
 <header class="header">
@@ -27,42 +26,39 @@
             <a href="locales.jsp">
             LOCALES  
                 <img class="location-icon" src="imagenes/ubica.png" alt="">
+                
             </a>
         </div>
         <div class="login-container">
-            <a href="login.jsp">
-            INGRESA O REGÍSTRATE  
-                <img class="login-icon" src="imagenes/user.png" alt="Ingresar o Registrarse">
-            </a>
-            </div>
+    	<% if (session.getAttribute("u") != null) { %>
+        	<div id="ingresado1">
+	            <p> <strong> ${u.getNombre() } ${u.apellidoPat } ${u.apellidoMat }</strong></p>
+	            <button class="nav-item active">
+	                <a class="nav-link" href="crudUsu?btnAccion=logout"> Cerrar Sesión</a>
+	            </button>
+	            <span class="sr-only"></span>
+        	</div>
+    	<% } else { %>
+	        <a href="login.jsp" id="ingreso1"> INGRESA O REGÍSTRATE 
+	            <img class="login-icon" src="imagenes/user.png" alt="Ingresar o Registrarse">
+	        </a>
+    	<% } %>
+		</div>
         <div class="cart-container">
-            <a href="carrito.html">
+            <a href="carrito.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>
-    </header>
-    
-	<div class="container1">
-		<header class="container1">
-			<%--
-				Usuario u = (Usuario)request.getAttribute("u");
-				if (u==null)
-					u = new Usuario();
-			
-			--%>
-
-
-			<p>
-				Ud se ha identificado como : <strong>${u.getNombre()}
-					${u.apellidoPat} ${u.apellidoMat }</strong>
-			</p>
-		</header>
-
+</header>
+		
+	<div class="mantenimiento" id="mantenimiento">
+	<h2>MANTENIMIENTO DE DISTRITOS DELIVERY</h2>
+		<div class="partemantenimiento">
 		<main class="container1">
+			<div class="partecontainer1">
+			<section class="container1">
 
-			<section class="container1" style="width: 65%; float: left;">
-
-				<h1>Mantenimiento de Distritos de Delivery</h1>
+				
 
 				<!-- Formulario -->
 				<form action="crudDistritoDelivery" method="post">
@@ -91,20 +87,20 @@
 
 
 					<br>
-
+				<div class="botonesmantenimiento">
 					<button type="submit" name="btnAccion" value="registrar"
 						class="btn btn-primary">Registrar</button>
-					<button type="submit" name="btnAccion" value="actualizar"
+					<button  type="submit" name="btnAccion" value="actualizar"
 						class="btn btn-primary">Actualizar</button>
 					<button type="submit" name="btnAccion" value="eliminar"
 						class="btn btn-danger">Eliminar</button>
-					<button type="submit" name="btnAccion" value="listado"
+					<button  type="submit" name="btnAccion" value="listado"
 						class="btn btn-warning">Listado</button>
-
+				</div>
 				</form>
 				<br> ${mensaje }
-			</section>
-			<tr>
+			</section></div>
+				<div class= "container2">
 				<table class="table">
 
 					<tr>
@@ -129,8 +125,9 @@
 					%>
 
 				</table>
-				</main>
 				</div>
+				</main>
+				</div></div>
 				
 		<div class="regreso3">
    	 	<a href="Menuadministrador.jsp">

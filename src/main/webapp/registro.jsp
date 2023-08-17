@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
 </head>
 <body>
-	<header class="header">
+<header class="header">
         <div class="logo-container">
         	<a href="Index.jsp">
             <img  class="logo" src="imagenes/LOGOLICO.jpeg"  alt=" ">
@@ -27,18 +27,26 @@
             </a>
         </div>
         <div class="login-container">
-            <a href="login.jsp">
-            INGRESA O REGÍSTRATE  
-                <img class="login-icon" src="imagenes/user.png" alt="Ingresar o Registrarse">
-                 
-            </a>
-        </div>
+    	<% if (session.getAttribute("u") != null) { %>
+        	<div id="ingresado1">
+	            <p> <strong> ${u.getNombre() } ${u.apellidoPat } ${u.apellidoMat }</strong></p>
+	            <button class="nav-item active">
+	                <a class="nav-link" href="crudUsu?btnAccion=logout"> Cerrar Sesión</a>
+	            </button>
+	            <span class="sr-only"></span>
+        	</div>
+    	<% } else { %>
+	        <a href="login.jsp" id="ingreso1"> INGRESA O REGÍSTRATE 
+	            <img class="login-icon" src="imagenes/user.png" alt="Ingresar o Registrarse">
+	        </a>
+    	<% } %>
+		</div>
         <div class="cart-container">
-            <a href="carrito.html">
+            <a href="carrito.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>
-    </header>
+</header>
     <h1 class="usuarioh1">REGISTRAR USUARIO</h1>
 	<div id="login">
 		<div class="formulariologin">

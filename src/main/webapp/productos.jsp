@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<title>Locales</title>
-	<link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
-	</head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
+</head>
 <body>
 <header class="header">
         <div class="logo-container">
@@ -46,70 +45,27 @@
             </a>
         </div>
 </header>
-    <h1 class="usuarioh1">NUESTROS LOCALES</h1>
-    	<hr class="linea1">
+    <nav class="barraProducto">
+        <ul>
+            <li><a href="Index.jsp"></a></li>
+            <li><a href="Index.jsp">VINOS</a></li>
+            <li><a href="Index.jsp">LICORES</a></li>
+            <li><a href="nosotros.jsp"></a></li>
+        </ul>
+    </nav>
+    <section class="">
+       
+    </section>
+    <section class="products-section">
+        <!-- Aquí irá la sección de productos -->
+       
+    </section>
     
-    	<div class="cuadros2">
-    	
-    	<div class="cuadro1">
-        <h2 class="texto1">Abancay</h2>
-        <p>Av. Abancay Nº 252, LIMA - LIMA</p>
-        <br>
-        <p>Horario de tienda</p>
-        <p>Domingo a Jueves 11:00 am - 11:30</p>
-        <p>Viernes a Sábado 11:00 am - 12:30 am</p>
-        <br>
-        <p>Teléfono</p>
-        <p>6135025</p>
-    	</div>
-    	
-    	<div class="cuadro1">
-        <h2 class="texto1">Miraflores</h2>
-        <p>Av. Larco Nº 252, LIMA - LIMA</p>
-        <br>
-        <p>Horario de tienda</p>
-        <p>Domingo a Jueves 11:00 am - 11:30</p>
-        <p>Viernes a Sábado 11:00 am - 12:30 am</p>
-        <br>
-        <p>Teléfono</p>
-        <p>6135058</p>
-    	</div>
-		</div>
-
-		<div class="cuadros2">
-    	
-    	<div class="cuadro1">
-        <h2 class="texto1">San Isidro</h2>
-        <p>Av. Tijuana Nº 295, LIMA - LIMA</p>
-        <br>
-        <p>Horario de tienda</p>
-        <p>Domingo a Jueves 11:00 am - 11:30</p>
-        <p>Viernes a Sábado 11:00 am - 12:30 am</p>
-        <br>
-        <p>Teléfono</p>
-        <p>8576942</p>
-    	</div>
-    	
-    	<div class="cuadro1">
-        <h2 class="texto1">Ancon</h2>
-        <p>Av. Conchitas Nº 821, LIMA - LIMA</p>
-        <br>
-        <p>Horario de tienda</p>
-        <p>Domingo a Jueves 11:00 am - 11:30</p>
-        <p>Viernes a Sábado 11:00 am - 12:30 am</p>
-        <br>
-        <p>Teléfono</p>
-        <p>7495826</p>
-    	</div>
-		</div>
-    
-   	 	<div class="regreso3">
-   	 	<a href="Index.jsp">
-        <button class="view-more-button">REGRESAR</button>
-    	</a>
-		</div>
-	
-    <footer class="footer">
+    <div class="buttons">
+        <button class="buy-button">COMPRAR</button>
+        <button class="view-more-button">VER MÁS</button>
+    </div>
+<footer class="footer">
         <div class="disclaimer-bar">
             <p class="disclaimer-text">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>
         </div>
@@ -138,7 +94,7 @@
            <p> 
            © 2023 BigBang.com.pe - Todos los derechos reservados</br>
         </p>
-    </footer>
+</footer>
 </body>
 </html>
 <script src="js/carrusel.js"></script>
