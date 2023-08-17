@@ -1,12 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="model.*"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<title>Locales</title>
-	<link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
-	</head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Reporte Productos</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
+</head>
 <body>
 <header class="header">
         <div class="logo-container">
@@ -46,70 +49,77 @@
             </a>
         </div>
 </header>
-    <h1 class="usuarioh1">NUESTROS LOCALES</h1>
-    	<hr class="linea1">
-    
-    	<div class="cuadros2">
-    	
-    	<div class="cuadro1">
-        <h2 class="texto1">Abancay</h2>
-        <p>Av. Abancay Nº 252, LIMA - LIMA</p>
-        <br>
-        <p>Horario de tienda</p>
-        <p>Domingo a Jueves 11:00 am - 11:30</p>
-        <p>Viernes a Sábado 11:00 am - 12:30 am</p>
-        <br>
-        <p>Teléfono</p>
-        <p>6135025</p>
-    	</div>
-    	
-    	<div class="cuadro1">
-        <h2 class="texto1">Miraflores</h2>
-        <p>Av. Larco Nº 252, LIMA - LIMA</p>
-        <br>
-        <p>Horario de tienda</p>
-        <p>Domingo a Jueves 11:00 am - 11:30</p>
-        <p>Viernes a Sábado 11:00 am - 12:30 am</p>
-        <br>
-        <p>Teléfono</p>
-        <p>6135058</p>
-    	</div>
-		</div>
-
-		<div class="cuadros2">
-    	
-    	<div class="cuadro1">
-        <h2 class="texto1">San Isidro</h2>
-        <p>Av. Tijuana Nº 295, LIMA - LIMA</p>
-        <br>
-        <p>Horario de tienda</p>
-        <p>Domingo a Jueves 11:00 am - 11:30</p>
-        <p>Viernes a Sábado 11:00 am - 12:30 am</p>
-        <br>
-        <p>Teléfono</p>
-        <p>8576942</p>
-    	</div>
-    	
-    	<div class="cuadro1">
-        <h2 class="texto1">Ancon</h2>
-        <p>Av. Conchitas Nº 821, LIMA - LIMA</p>
-        <br>
-        <p>Horario de tienda</p>
-        <p>Domingo a Jueves 11:00 am - 11:30</p>
-        <p>Viernes a Sábado 11:00 am - 12:30 am</p>
-        <br>
-        <p>Teléfono</p>
-        <p>7495826</p>
-    	</div>
-		</div>
-    
-   	 	<div class="regreso3">
-   	 	<a href="Index.jsp">
-        <button class="view-more-button">REGRESAR</button>
-    	</a>
-		</div>
 	
-    <footer class="footer">
+	<div class="reporte" id="reporte">
+		<div class="partereporte">
+
+			<h2>REPORTE DE PRODUCTOS</h2>
+			<form action="pedido" method="post">
+
+				<div class="botonesrep">
+
+					<button class="botonesreporte" id="consultar" type="submit" name="accion"
+							value="reporte">CONSULTAR</button>
+					<button class="botonesreporte" id="imprime" type="submit" name="accion"
+							value="reporte">IMPRIMIR PDF</button>
+				</div>
+			</form>
+
+			<div class="container mt-3">
+
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th style="width: 5%; text-align: center;">Código</th>
+							<th style="width: 15%; text-align: left;">Cliente</th>
+							<th style="width: 15%; text-align: left;">Direccion Cliente</th>
+							<th style="width: 15%; text-align: left;">Nombre Producto</th>
+							<th style="width: 5%; text-align: center;">Cantidad</th>
+							<th style="width: 5%; text-align: right;">Precio</th>
+							<th style="width: 10%; text-align: right;">Subtotal</th>
+							<th style="width: 10%; text-align: center;">Estado</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%--
+						ArrayList<Pedido> listado = (ArrayList<Pedido>) request.getAttribute("listado");
+
+						if (listado != null) {
+							for (Pedido p : listado) {
+						--%>
+						<%--
+						<tr>
+							<td style="text-align: center;"><%=p.getIdPed()%></td>
+							<td><%=p.getNombreCliente()%></td>
+							<td><%=p.getDireccionCliente()%></td>
+							<td><%=p.getNombreProducto()%></td>
+							<td style="text-align: center;"><%=p.getCantidad()%></td>
+							<td style="text-align: right;"><%=p.getPrecio()%></td>
+							<td style="text-align: right;"><%=p.getSubtotal()%></td>
+							<td style="text-align: center;"><%=p.getEstadoPedido()%></td>
+						</tr>
+						<%
+						}
+						}
+						--%>
+					</tbody>
+				</table>
+			</div>
+
+			<!--table-->
+			<!-- Tu tabla de reporte aquí -->
+			<!--/table-->
+		</div>
+	</div>
+
+
+	<div class="regreso3">
+		<a href="Menuadministrador.jsp">
+			<button class="view-more-button">REGRESAR</button>
+		</a>
+	</div>
+
+<footer class="footer">
         <div class="disclaimer-bar">
             <p class="disclaimer-text">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>
         </div>
@@ -138,7 +148,8 @@
            <p> 
            © 2023 BigBang.com.pe - Todos los derechos reservados</br>
         </p>
-    </footer>
+</footer>
 </body>
 </html>
 <script src="js/carrusel.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>

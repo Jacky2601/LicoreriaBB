@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 
 	private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.getSession().invalidate();	
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("Index.jsp");
 	}
 
 	private void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -79,9 +79,16 @@ public class LoginServlet extends HttpServlet {
 			
 			request.getSession().setAttribute("u", u); // el atributo esta a nivel de sesion
 			
-			request.getRequestDispatcher("Index.jsp").forward(request, response);
-		
-
+			// Configura el tipo de usuario en función del rol
+			if (u.getTipo() == 2) {
+			    u.setTipo(2); // Cliente
+			    request.getRequestDispatcher("Index.jsp").forward(request, response);
+			} else if (u.getTipo() == 1) {
+			    u.setTipo(1); // Administrador
+			    request.getRequestDispatcher("Menuadministrador.jsp").forward(request, response);
+			}
+			
+			
 	    } else {
 			System.out.println("Usuario o clave incorrecto");
 			request.setAttribute("mensaje", "<div class='alert alert-danger' role='alert'>\r\n"

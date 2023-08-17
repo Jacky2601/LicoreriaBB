@@ -75,7 +75,7 @@ public class DistritoDeliveryServlet extends HttpServlet {
 		request.setAttribute("d", d);
 
 		// reenvia a la pagina
-		request.getRequestDispatcher("crudDistritoDelivery.jsp").forward(request, response);
+		request.getRequestDispatcher("manteDistritos.jsp").forward(request, response);
 
 	}
 
@@ -90,7 +90,7 @@ public class DistritoDeliveryServlet extends HttpServlet {
 		request.setAttribute("listado", listado);
 
 		// redireccionando a la pagina listado
-		request.getRequestDispatcher("crudDistritoDelivery.jsp").forward(request, response);
+		request.getRequestDispatcher("manteDistritos.jsp").forward(request, response);
 		
 		
 	}
@@ -113,7 +113,7 @@ public class DistritoDeliveryServlet extends HttpServlet {
 			request.setAttribute("mensaje", "<div class='alert alert-success' role='alert'>Distrito eliminado</div>");
 
 		}
-		request.getRequestDispatcher("crudDistritoDelivery.jsp").forward(request, response);
+		request.getRequestDispatcher("manteDistritos.jsp").forward(request, response);
 
 	}
 
@@ -137,7 +137,7 @@ public class DistritoDeliveryServlet extends HttpServlet {
 			request.setAttribute("mensaje", "<div class='alert alert-success' role='alert'>Distrito actualizado</div>");
 
 		}
-		request.getRequestDispatcher("crudDistritoDelivery.jsp").forward(request, response);
+		request.getRequestDispatcher("manteDistritos.jsp").forward(request, response);
 
 		System.out.println(idDistrito + " " + nombreDistrito);
 
@@ -164,7 +164,7 @@ public class DistritoDeliveryServlet extends HttpServlet {
 			request.setAttribute("mensaje", "<div class='alert alert-success' role='alert'>Distrito registrado</div>");
 
 		}
-		request.getRequestDispatcher("crudDistritoDelivery.jsp").forward(request, response);
+		request.getRequestDispatcher("manteDistritos.jsp").forward(request, response);
 		
 		System.out.println(idDistrito + " " + nombreDistrito +  " " + estado);
 
