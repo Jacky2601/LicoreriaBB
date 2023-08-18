@@ -35,7 +35,6 @@ public class GestionProducto implements ProductoInterface{
                 producto.setDescripcion(rs.getString(4));
                 producto.setPrecio(rs.getDouble(5));
                 producto.setStock(rs.getInt(6));
-                producto.setImagen(rs.getString(7));
             }
 
         } catch (Exception e) {
@@ -67,7 +66,7 @@ public class GestionProducto implements ProductoInterface{
 			
 		try {
 			con = MySQLConexion8.getConexion();
-			String sql = "insert into tb_productos values (?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into tb_productos values (?, ?, ?, ?, ?, ?)";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, producto.getId_producto());
 			pst.setString(2, producto.getMarca_prod());
@@ -75,7 +74,6 @@ public class GestionProducto implements ProductoInterface{
 			pst.setString(4, producto.getDescripcion());
 			pst.setDouble(5, producto.getPrecio());
 			pst.setInt(6, producto.getStock());
-			pst.setString(7, producto.getImagen());
 			
 			rs = pst.executeUpdate();
 			
@@ -112,7 +110,6 @@ public class GestionProducto implements ProductoInterface{
 	            p.setDescripcion(rs.getString(4));
 	            p.setPrecio(rs.getDouble(5));
 	            p.setStock(rs.getInt(6));
-	            p.setImagen(rs.getString(7));
 
 	            lista.add(p);
 	        }
@@ -146,7 +143,7 @@ public class GestionProducto implements ProductoInterface{
 				
 			try {
 				con = MySQLConexion8.getConexion();
-				String sql = "UPDATE tb_productos SET marca_prod=?, id_categoria=?, descripcion=?, precio=?, stock=?, imagen=? WHERE id_producto=?";
+				String sql = "UPDATE tb_productos SET marca_prod=?, id_categoria=?, descripcion=?, precio=?, stock=? WHERE id_producto=?";
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, producto.getId_producto());
 				pst.setString(2, producto.getMarca_prod());
@@ -154,7 +151,6 @@ public class GestionProducto implements ProductoInterface{
 				pst.setString(4, producto.getDescripcion());
 				pst.setDouble(5, producto.getPrecio());
 				pst.setInt(6, producto.getStock());
-				pst.setString(7, producto.getImagen());
 				
 				rs = pst.executeUpdate();
 				
