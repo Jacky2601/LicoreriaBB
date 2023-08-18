@@ -48,8 +48,8 @@
     <nav class="navbar">
         <ul>
             <li><a href="Index.jsp">INICIO</a></li>
-            <li><a href="Index.jsp">VINOS</a></li>
-            <li><a href="Index.jsp">LICORES</a></li>
+            <li><a href="catalogo?btnAccion=listado">VINOS</a></li>
+            <li><a href="productos.jsp">LICORES</a></li>
             <li><a href="nosotros.jsp">NOSOTROS</a></li>
         </ul>
     </nav>
