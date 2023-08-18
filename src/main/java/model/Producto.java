@@ -2,15 +2,13 @@ package model;
 
 public class Producto {
 	private int id_producto;
-	private String marca_prod;
 	private int id_categoria;
 	private String categoria;
+	private String marca_prod;
 	private String descripcion;
 	private double precio;
 	private int stock;
-	
-	
-
+	private int estado;
 	
 	
 	public Producto() {
@@ -18,17 +16,44 @@ public class Producto {
 	}
 	
 
-	public Producto(int id_producto, String marca_prod, int id_categoria, String descripcion, double precio, int stock) {
-		
-		this.id_producto = id_producto;
-		this.marca_prod = marca_prod;
+	public Producto(int id_categoria, String marca_prod, String descripcion, double precio, int stock, int estado) {
+		super();
 		this.id_categoria = id_categoria;
+		this.marca_prod = marca_prod;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.stock = stock;
+		this.estado = estado;
 	}
 
-	
+
+
+	public Producto(int id_producto, int id_categoria, String marca_prod, String descripcion, double precio, int stock,
+			int estado) {
+		super();
+		this.id_producto = id_producto;
+		this.id_categoria = id_categoria;
+		this.marca_prod = marca_prod;
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.stock = stock;
+		this.estado = estado;
+	}
+
+
+	public Producto(int id_producto, int id_categoria, String categoria, String marca_prod, String descripcion,
+			double precio, int stock, int estado) {
+		super();
+		this.id_producto = id_producto;
+		this.id_categoria = id_categoria;
+		this.categoria = categoria;
+		this.marca_prod = marca_prod;
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.stock = stock;
+		this.estado = estado;
+	}
+
 
 	public int getId_producto() {
 		return id_producto;
@@ -78,13 +103,17 @@ public class Producto {
 		this.stock = stock;
 	}
 
+	public int getEstado() {
+		return estado;
+	}
 
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
 
 	public String getCategoria() {
 		return categoria;
 	}
-
-
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;

@@ -90,49 +90,44 @@ public class GestionProducto implements ProductoInterface{
 	@Override
 	public ArrayList<Producto> listarProducto() {
 		
-		ArrayList<Producto> lista = new ArrayList<>();
-	    ResultSet rs = null;
+		ArrayList<Producto> lista = null;
+		//Plantilla
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
 
 	    try {
 	        con = MySQLConexion8.getConexion();
-	        String sql = "SELECT * FROM tb_productos";
+	        String sql = "SELECT p.id_producto, c.nom_categoria, p.marca_prod, p.descripcion, p.precio, p.stock\r\n"
+	        		+ "FROM tb_productos p\r\n"
+	        		+ "JOIN tb_categorias c ON p.id_categoria = c.id_categoria\r\n"
+	        		+ "WHERE p.estado = 1";
 	        pst = con.prepareStatement(sql);
 
 	        // Ejecutar la consulta
 	        rs = pst.executeQuery();
-
+	        lista = new ArrayList<Producto>();
 	        while (rs.next()) {
-	            Producto p = new Producto();
-
-	            p.setId_producto(rs.getInt(1));
-	            p.setMarca_prod(rs.getString(2));
-	            p.setId_categoria(rs.getInt(3));
-	            p.setDescripcion(rs.getString(4));
-	            p.setPrecio(rs.getDouble(5));
-	            p.setStock(rs.getInt(6));
-
+	            Producto p = new Producto(
+	            			rs.getInt("id_producto"),
+	            			rs.getInt("id_categoria"),
+							rs.getString("marca_prod"),
+							rs.getString("descripcion"), 
+							rs.getDouble("precio"), 
+							rs.getInt("stock"), 
+							rs.getInt("estado"));
 	            lista.add(p);
-	        }
-
-	    } catch (Exception e) {
-	        System.out.println("Error en listar : " + e.getMessage());
-	    } finally {
-	        // Cerrar los recursos adecuadamente en el bloque finally
-	        try {
-	            if (rs != null) {
-	                rs.close();
-	            }
-	            if (pst != null) {
-	                pst.close();
-	            }
-	        } catch (Exception e) {
-	            System.out.println("Error al cerrar recursos : " + e.getMessage());
-	        }
-	        // Cerrar la conexión en un bloque de finally adicional
-	        MySQLConexion8.closeConexion(con);
-	    }
-
-	    return lista;
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Error en listar : " + e.getMessage());
+			
+		} finally {
+			MySQLConexion8.closeConexion(con);
+		}
+		
+		
+		return lista ;
 	}
 	
 

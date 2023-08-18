@@ -65,22 +65,35 @@
     <section class="section-Vino" id="Vino">
     <!-- EMPIEZA EL CUADRO DEL PRODUCTO -->
 	<div class="filatragos">
+	<%
+    ArrayList<Producto> listarProducto = (ArrayList<Producto>) request.getAttribute("listarProducto");
+			if (listarProducto != null) {
+				for (Producto p : listarProducto) { 
+	%>
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
-        <img class="imgtrago" id="trago1" src="productos/PRO1.jpg" alt="Vino">
-        <h2 class="categoria">Vino</h2>
-        <h2 class="marca">EL ENEMIGO</h2>
-        <p class="descripcion">Cabernet Franc Botella 750ml</p>
+    
+        <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
         
-        <h3 class="precio" id="precio">S/.<span id="precio1">86.90</span></h3>
-        <div class="buttons">
-        	<a href="DetalleProducto.jsp">
-        	<button class="buy-button">COMPRAR</button>
+        <h2 class="categoria"><%=p.getId_categoria()%></h2>
+        <h2 class="marca"><%=p.getMarca_prod()%></h2>
+        <p class="descripcion"><%=p.getDescripcion()%></p>
+        <p class="stock">Stock: <%=p.getStock()%> Unidades</p>
+        <h3 class="precio" id="precio">S/. <span id="precio1"><%=p.getPrecio()%></span></h3>
+        
+        <div class="buttonslicor">
+        	<a href="catalogo?btnAccion=buscarPorIds&id=<%=p.getId_producto()%>">
+        	<button class="buy-buttonlicor">COMPRAR</button>
         	</a>
     	</div>
+    	
         <br>
+        
     </div>
-    
+    <%
+	}
+	}
+	%>
 	</div>
 	
 	
