@@ -60,42 +60,69 @@
 				
 
 				<!-- Formulario -->
-				<form action="crudDistritoDelivery" method="post">
+				<form action="crudUsuario" method="post">
+									
 					<div class="form-group">
-						<label for="inputCodigo">Código del Distrito:</label> <input
-							name="txtCodigo" value="${d.idDistrito}" class="form-control"
-							id="inputCodigo" placeholder="Ingrese Código del Distrito">
+						<label for="inputCodigo">Código del Usuario:</label> <input
+							name="txtCodigo" value="${u.idUsuario}" class="form-control"
+							id="inputCodigo" placeholder="Ingrese Código del Usuario">
 					</div>
 
 					<div class="form-group">
-						<label for="inputDescripcion">Nombre del Distrito:</label> <input
-							name="txtNombre" value="${d.nombreDistrito }"
-							class="form-control" id="inputNombreDistrito"
-							placeholder="Ingrese nombre del distrito">
+						<label for="inputNombre">Nombre del Usuario:</label> <input
+							name="txtNombre" value="${u.nombre}" class="form-control"
+							id="inputNombre" placeholder="Ingrese nombre del usuario">
 					</div>
 
 
 					<div class="form-group">
-						<label for="inputEstado">Estado:</label> <select name="cboEstado"
-							class="form-control" id="exampleFormControlSelect1">
+						<label for="inputApellidoPaterno">Apellido Paterno:</label> <input
+							name="txtApellidoPat" value="${u.apellidoPat}"
+							class="form-control" id="inputApellidoPaterno"
+							placeholder="Ingrese apellido paterno">
+					</div>
+
+					<div class="form-group">
+						<label for="inputApellidoMaterno">Apellido Materno:</label> <input
+							name="txtApellidoMat" value="${u.apellidoMat}"
+							class="form-control" id="inputApellidoMaterno"
+							placeholder="Ingrese apellido materno">
+					</div>
+
+					<div class="form-group">
+						<label for="inputUsuario">Usuario:</label> <input type="email"
+							name="txtUsuario" value="${u.usuario}" class="form-control"
+							id="inputUsuario" placeholder="Ingrese correo electrónico">
+					</div>
+
+					<div class="form-group">
+						<label for="inputPassword">Contraseña</label> <input
+							type="password" name="txtPassword" value="${u.clave}"
+							class="form-control" id="inputPassword"
+							placeholder="Ingrese clave o contraseña de 8 caracteres">
+					</div>
+					
+					<div class="form-group">
+						<label for="cboTipo">Tipo de Usuario:</label> <select name="cboTipo"
+							class="form-control" id="cboTipo">
 							<option value='-1'>Seleccione</option>
-							<option value='1'>Activo</option>
-							<option value='2'>Eliminado</option>
+							<option value='1'>administrador</option>
+							<option value='2'>cliente</option>
 						</select>
 					</div>
 
-
-					<br>
-				<div class="botonesmantenimiento">
+					
 					<button type="submit" name="btnAccion" value="registrar"
 						class="btn btn-primary">Registrar</button>
-					<button  type="submit" name="btnAccion" value="actualizar"
+					<button type="submit" name="btnAccion" value="actualizar"
 						class="btn btn-primary">Actualizar</button>
 					<button type="submit" name="btnAccion" value="eliminar"
 						class="btn btn-danger">Eliminar</button>
-					<button  type="submit" name="btnAccion" value="listado"
+					<button type="submit" name="btnAccion" value="listado"
 						class="btn btn-warning">Listado</button>
-				</div>
+					<!-- <button type="submit" name="btnAccion" value="q"
+						class="btn btn-warning">Buscar</button> -->
+
 				</form>
 				<br> ${mensaje }
 			</section></div>
@@ -103,20 +130,31 @@
 				<table class="table">
 
 					<tr>
-						<th>Código del Distrito</th>
-						<th>Nombre del Distrito</th>
+						<th>Código del Usuario</th>
+						<th>Nombre</th>
+						<th>Apellido Paterno</th>
+						<th>Apellido Materno</th>
+						<th>Usuario</th>
+						<th>Contraseña</th>
+						<th>Tipo de Usuario</th>
 					</tr>
 
 					<%
-					GestionDistritoDelivery gd = new GestionDistritoDelivery();
-					ArrayList<DistritoDelivery> listado = gd.listado();
+					GestionUsuario gu = new GestionUsuario();
+					ArrayList<Usuario> listado = gu.listado();
 
 					if (listado != null) {
-						for (DistritoDelivery d : listado) {
+						for (Usuario u : listado) {
 					%>
 					<tr>
-						<td><%=d.getIdDistrito()%></td>
-						<td><%=d.getNombreDistrito()%></td>
+						<td><%=u.getIdUsuario()%></td>
+						<td><%=u.getNombre()%></td>
+						<td><%=u.getApellidoPat()%></td>
+						<td><%=u.getApellidoMat()%></td>
+						<td><%=u.getUsuario()%></td>
+						<td><%=u.getClave()%></td>
+						<td><%=u.getTipo()%></td>
+						
 					</tr>
 					<%
 					}

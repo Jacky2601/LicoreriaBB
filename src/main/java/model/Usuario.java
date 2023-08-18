@@ -34,6 +34,29 @@ public class Usuario {
 		this.usuario = usuario;
 		this.clave = clave;
 	}
+		
+	
+	public Usuario(String nombre, String apellidoPat, String apellidoMat, String usuario, String clave, int tipo) {
+		super();
+		this.nombre = nombre;
+		this.apellidoPat = apellidoPat;
+		this.apellidoMat = apellidoMat;
+		this.usuario = usuario;
+		this.clave = clave;
+		this.tipo = tipo;
+	}
+
+	public Usuario(int idUsuario, String nombre, String apellidoPat, String apellidoMat, String usuario, String clave,
+			int tipo) {
+		super();
+		this.idUsuario = idUsuario;
+		this.nombre = nombre;
+		this.apellidoPat = apellidoPat;
+		this.apellidoMat = apellidoMat;
+		this.usuario = usuario;
+		this.clave = clave;
+		this.tipo = tipo;
+	}
 	
 	
 	public Usuario(String nombre, String apellidoPat, String apellidoMat, String usuario, String clave, int tipo,
