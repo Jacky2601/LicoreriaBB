@@ -70,5 +70,29 @@ document.getElementById("r4").setAttribute("onclick", "yt(this)");
 
 
 
+//mostrando seccion
+function mostrarSeccion(id) {
+    // Ocultar todas las secciones
+    var secciones = document.getElementsByTagName('section');
+    for (var i = 0; i < secciones.length; i++) {
+        secciones[i].style.display = 'none';
+    }
+
+    // Mostrar la sección seleccionada
+    var seccion = document.getElementById(id);
+    if (seccion) {
+        seccion.style.display = 'block';
+    }
+}
+
+function mostrarVino() {
+    window.location.href = "Carta.jsp?showVino=true";
+}
+
+function mostrarWhisky() {
+    window.location.href = "Carta.jsp?showWhisky=true";
+}
+
+
 
 

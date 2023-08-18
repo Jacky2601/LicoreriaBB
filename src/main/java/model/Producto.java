@@ -4,26 +4,31 @@ public class Producto {
 	private int id_producto;
 	private String marca_prod;
 	private int id_categoria;
+	private String categoria;
 	private String descripcion;
 	private double precio;
 	private int stock;
-	private String imagen;
 	
-	public Producto(int id_producto, String marca_prod, int id_categoria, String descripcion, double precio, int stock,
-			String imagen) {
-		super();
+	
+
+	
+	
+	public Producto() {
+		
+	}
+	
+
+	public Producto(int id_producto, String marca_prod, int id_categoria, String descripcion, double precio, int stock) {
+		
 		this.id_producto = id_producto;
 		this.marca_prod = marca_prod;
 		this.id_categoria = id_categoria;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.stock = stock;
-		this.imagen = imagen;
 	}
 
-	public Producto() {
-		
-	}
+	
 
 	public int getId_producto() {
 		return id_producto;
@@ -73,13 +78,18 @@ public class Producto {
 		this.stock = stock;
 	}
 
-	public String getImagen() {
-		return imagen;
+
+
+	public String getCategoria() {
+		return categoria;
 	}
 
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
+
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
+	
 	
 	
 	
