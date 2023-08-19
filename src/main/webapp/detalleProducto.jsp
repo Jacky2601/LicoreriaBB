@@ -16,13 +16,10 @@
             <img  class="logo" src="imagenes/LOGOLICO.jpeg"  alt=" ">
             </a>
         </div>
-        
-        
         <div class="locations-container">
             <a href="locales.jsp">
             LOCALES  
                 <img class="location-icon" src="imagenes/ubica.png" alt="">
-                
             </a>
         </div>
         <div class="login-container">
@@ -41,7 +38,7 @@
     	<% } %>
 		</div>
         <div class="cart-container">
-            <a href="carrito.jsp">
+            <a href="carritoCompras.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>
@@ -52,53 +49,53 @@
 		<!-- Aquí irá la sección de productos -->
 		<div class="cuadros3carta">
 		<%
-    	ArrayList<Producto> buscarIDS = (ArrayList<Producto>) request.getAttribute("buscarIDS");
-			if (buscarIDS != null) {
-				for (Producto p : buscarIDS) { 
+		Producto pro = (Producto) request.getAttribute("pro");
+		if (pro != null) {
 		%>
 			<br>
 			<!-- Ejemplo de un producto -->
 			<div class="cuadrocarta3">
 
 				<img class="imagenproducto3" id="traguito3"
-					src="productos/PRO<%=p.getId_producto()%>.jpg" alt="producto">
+					src="productos/PRO<%=pro.getId_producto()%>.jpg" alt="producto">
 				<div class="cuadrito3">
-					<h2 class="nombre3"><%=p.getCategoria()%></h2>
-					<h2 class="nombre3"><%=p.getMarca_prod()%></h2>
-					<p class="descripcion3"><%=p.getDescripcion()%></p>
-					<p class="stock">Stock: <%=p.getStock()%> Unidades</p>
+					<h2 class="nombre3"><%=pro.getCategoria()%></h2>
+					<h2 class="nombre3"><%=pro.getMarca_prod()%></h2>
+					<p class="descripcion3"><%=pro.getDescripcion()%></p>
+					<p class="stock">Stock: <%=pro.getStock()%> Unidades</p>
 					<br>
 					<h3 class="precio3" id="precio1">
-						S/. <span id="precio"><%= String.format("%.2f", p.getPrecio()) %></span>
+						S/. <span id="precio"><%= String.format("%.2f", pro.getPrecio()) %></span>
 					</h3>
 					<br>
-
-					<form action="pedido" method="post">
-						<div>
-							<p>Cantidad:</p>
-							<button class="buttons3" id="decrement" type="button">-</button>
-							<input class="cant3" type="text" id="quantity" value="0"
-								name="cantidad">
-							<button class="buttons3" id="increment" type="button">+</button>
-						</div>
-						<p>SubTotal: S/. <span id="subtotal">0</span></p>
-						
-						
-						
-						
-
-						<div class="buttons3">
-							<button class="buy-button" type="submit" name="accion"
-								value="solPedido">SOLICITAR PEDIDO</button>
-						</div>
-						<br>
+					<form action="catalogo" method="post">
+					    <input type="hidden" name="btnAccion" value="añadirProductos">
+					    <input type="hidden" name="id" value="<%=pro.getId_producto()%>">
+					    <div>
+					        <p>Cantidad:</p>
+					        <button class="buttons3" id="decrement" type="button">-</button>
+					        <input class="cant3" type="text" id="quantity" value="0" name="cantidad">
+					        <button class="buttons3" id="increment" type="button">+</button>
+					    </div>
+					    <p>SubTotal: S/. <span id="subtotal">0</span></p>
+					    <div class="buttons3">
+					        <button class="buy-button" type="submit">AGREGAR AL CARRITO</button>
+					    </div>
+					    <br>
 					</form>
+
 				</div>
 			</div>
 			 <%
-	}
-	}
-	%>
+					} else {
+						 String mensaje2 = "No se pudo cargar el producto";
+						 %>
+						    <div class="mensajito">
+						        <p><%= mensaje2 %></p>
+						    </div>
+						<%
+					}
+					%>
 			<!-- Se modifica de acuerdo al producto selecionado -->
 		</div>
 

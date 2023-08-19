@@ -17,5 +17,6 @@ public interface CatalogoInterface {
 	ArrayList<Producto> listarOtros();
 	
 	Producto buscarIDS(int id_producto);
+	ArrayList<Producto> listaProducto();
 	
 }

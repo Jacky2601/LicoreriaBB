@@ -304,6 +304,7 @@ public class GestionCatalogo implements CatalogoInterface {
 		
 		return lista ;
 	}
+	
 	@Override
 	public ArrayList<Producto> listarPisco() {
 
@@ -429,6 +430,47 @@ public class GestionCatalogo implements CatalogoInterface {
 				
 		return p;
 
+	}
+	
+	@Override
+	public ArrayList<Producto> listaProducto() {
+		ArrayList<Producto> lista = null;
+		
+		Connection con = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		
+		try {
+			con = MySQLConexion8.getConexion();
+			String sql = "SELECT p.id_producto, c.nom_categoria, p.marca_prod, p.descripcion, p.precio, p.stock\r\n"
+	        		+ "FROM tb_productos p\r\n"
+	        		+ "JOIN tb_categorias c ON p.id_categoria = c.id_categoria\r\n"
+	        		+ "WHERE p.estado = 1";
+			pst = con.prepareStatement(sql);
+						
+			rs = pst.executeQuery();
+			
+			lista = new ArrayList<Producto>();
+			while (rs.next()) {
+				Producto p = new Producto(
+						rs.getInt("id_producto"),
+         				rs.getString("nom_categoria"),
+						rs.getString("marca_prod"),
+						rs.getString("descripcion"), 
+						rs.getDouble("precio"), 
+						rs.getInt("stock"));
+																
+				lista.add(p);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Error en listar : " + e.getMessage());
+			
+		} finally {
+			MySQLConexion8.closeConexion(con);
+		}
+				
+		return lista ;
 	}
 
 }
