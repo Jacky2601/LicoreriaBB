@@ -17,9 +17,7 @@
             </a>
         </div>
         
-        <div class="search-container">
-            <input type="text" class="search" placeholder="Buscar Producto">
-        </div>
+        
         <div class="locations-container">
             <a href="locales.jsp">
             LOCALES  
@@ -51,27 +49,27 @@
     
     <section class="products-section">
 
-		<%
-		Producto prod = (Producto) request.getAttribute("pro");
-		boolean seRegistro = (boolean) request.getAttribute("estadoReg");
-		%>
-
 		<!-- Aquí irá la sección de productos -->
 		<div class="cuadros3carta">
+		<%
+    	ArrayList<Producto> buscarIDS = (ArrayList<Producto>) request.getAttribute("buscarIDS");
+			if (buscarIDS != null) {
+				for (Producto p : buscarIDS) { 
+		%>
 			<br>
 			<!-- Ejemplo de un producto -->
 			<div class="cuadrocarta3">
 
 				<img class="imagenproducto3" id="traguito3"
-					src="productos/PRO<%=prod.getId_producto()%>.jpg" alt="producto">
+					src="productos/PRO<%=p.getId_producto()%>.jpg" alt="producto">
 				<div class="cuadrito3">
-					<h2 class="nombre3"><%=prod.getCategoria()%></h2>
-					<h2 class="nombre3"><%=prod.getMarca_prod()%></h2>
-					<p class="descripcion3"><%=prod.getDescripcion()%></p>
-					<p class="stock">Stock: <%=prod.getStock()%> Unidades</p>
+					<h2 class="nombre3"><%=p.getCategoria()%></h2>
+					<h2 class="nombre3"><%=p.getMarca_prod()%></h2>
+					<p class="descripcion3"><%=p.getDescripcion()%></p>
+					<p class="stock">Stock: <%=p.getStock()%> Unidades</p>
 					<br>
 					<h3 class="precio3" id="precio1">
-						S/. <span id="precio"><%= String.format("%.2f", prod.getPrecio()) %></span>
+						S/. <span id="precio"><%= String.format("%.2f", p.getPrecio()) %></span>
 					</h3>
 					<br>
 
@@ -79,56 +77,35 @@
 						<div>
 							<p>Cantidad:</p>
 							<button class="buttons3" id="decrement" type="button">-</button>
-							<input class="cant3" type="text" id="quantity" value="1"
+							<input class="cant3" type="text" id="quantity" value="0"
 								name="cantidad">
 							<button class="buttons3" id="increment" type="button">+</button>
 						</div>
-						<p>
-							SubTotal: S/. <span id="subtotal"><%=prod.getPrecio()%></span>
-						</p>
-						<br>
-						<div>
-							<label>Nombre completo de la persona que recibe el pedido</label>
-							<input class="input-text" type="text" id="cliente"
-								name="nombreCliente">
-						</div>
-						<br>
-						<div>
-							<label>Dirección de la persona que recibe el pedido</label> <input
-								class="input-text" type="text" id="direccionCliente"
-								name="direccionCliente">
-						</div>
-
-						<input type="hidden" name="idProducto"
-							value="<%=prod.getId_producto()%>"> <input type="hidden"
-							name="precioProducto" value="<%= String.format("%.2f", prod.getPrecio()) %>">
-						<%
-						if (seRegistro) {
-						%>
-						<div>
-							<h3 style="background-color: green; padding: 10px;">Pedido
-								registrado con éxito</h3>
-						</div>
-						<%
-						}
-						%>
+						<p>SubTotal: S/. <span id="subtotal">0</span></p>
+						
+						
+						
+						
 
 						<div class="buttons3">
 							<button class="buy-button" type="submit" name="accion"
-								value="regPedido">SOLICITAR PEDIDO</button>
+								value="solPedido">SOLICITAR PEDIDO</button>
 						</div>
 						<br>
 					</form>
 				</div>
 			</div>
-
+			 <%
+	}
+	}
+	%>
 			<!-- Se modifica de acuerdo al producto selecionado -->
 		</div>
 
 	</section>
 
 	<div class="regreso2" style="margin-top: 8rem;">
-		<a href="Index.jsp">
+		<a href="catalogo?btnAccion=listarVino">
 			<button class="view-more-button">REGRESAR</button>
 		</a>
 	</div>

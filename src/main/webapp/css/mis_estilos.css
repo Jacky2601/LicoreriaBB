@@ -765,4 +765,270 @@ partecontainer1 {
 	width: 50px; /* Puedes ajustar el valor según tu diseño */
 }
 
+/* PRODUCTO EN CANASTITA*/
+
+.cuadros4canasta {
+    display: flex;
+    align-items: Left;
+    justify-content: center;
+}
+
+.cuadrocanasta4 {
+    display: flex;
+    width: 80%; /* Ajusta el ancho del cuadro al 100% del contenedor */
+    height: 350px; /* Ajusta la altura según tu diseño */
+    margin: 15px 0;
+    color: white;
+    background-color: black;
+    border: 1px solid #000000;
+    border-radius: 70px;
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+}
+
+.cuadrocanasta4 p {
+    margin: 5px 0;
+    text-align: Left;
+    font-size: 25px;
+}
+
+.imagenproducto4 {
+	width: 35%; /* Ajusta el ancho de la imagen */
+    height: 90%; /* Ajusta la altura al 100% del cuadro */
+    object-fit: cover; /* Ajusta la imagen para que ocupe el espacio sin deformarse */
+    margin-left: 150px; /* Agrega un margen a la izquierda para separar la imagen del texto */
+}
+
+.nombre4 {
+    text-align: Left; /* Alinear el texto a la izquierda */
+    color:orange;
+  /*  margin-bottom: 5px;  Agregar espacio de 20px debajo del párrafo */
+    margin-top: 5px; /* Ajustar el margen superior según tu preferencia */
+	font-size: 40px; /* Tamaño de letra 20px */
+}
+
+.precio4 {
+    text-align: Left; /* Alinear el texto a la izquierda */
+    color:orange;
+    margin-bottom: 5px; /* Agregar espacio de 20px debajo del párrafo */
+	font-size: 30px; /* Tamaño de letra 20px */
+}
+
+.cuadrito4{
+	width: 40%; /* Ajusta el ancho del cuadro del texto */
+	margin: 0 30px;
+}
+
+.nombre4, .descripcion4, .precio4 {
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.cant4 {
+	margin: 5px 0;
+    font-size: 20px;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+	width: 50px; /* Puedes ajustar el valor según tu diseño */
+}
+
+.buttons4{
+    margin: 5px 5px;
+    font-size: 20px;
+    padding: 5px 20px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+.buy-button4 {
+    background-color: #b81f1f;
+    padding: 5px 90px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 150px;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 25px; /* Tamaño de letra 20px */
+    
+}
+
+.bloque4{
+	display: flex;
+}
+
+.bloque41{
+	display: flex;
+	padding: 0 20px;
+}
+
+/* Estilos para los botones DE LA CANASTA*/
+.buttonscana {
+    text-align: center;
+    margin: 20px 0;
+    
+}
+.linea14 {
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.view-more-button14 {
+    padding: 10px 20px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 20px; /* Tamaño de letra 20px */
+}
+
+.totalcanasta{
+	width: 100%; /* Ajusta el ancho del cuadro del texto */
+	margin: 0 30px;
+	color: white;
+	text-align: center; /* Alinear el texto a la izquierda */
+  /*  margin-bottom: 5px;  Agregar espacio de 20px debajo del párrafo */
+    margin-top: 5px; /* Ajustar el margen superior según tu preferencia */
+	font-size: 40px; /* Tamaño de letra 20px */
+}
+
+
+/* ESTILOS DE PEDIDO!!!!! */
+/* ESTILOS DE PEDIDO!!!!! */
+/* ESTILOS DE PEDIDO!!!!! */
+
+
+/* Contenedor principal */
+.pedido-container {
+    padding: 20px;
+    align-items: Left;
+    justify-content: center;
+    width: 90%; /* Ajusta el ancho del cuadro al 100% del contenedor */
+    height: 1300px; /* Ajusta la altura según tu diseño */
+    margin: 15px auto;
+    color: white;
+    background-color: black;
+    border: 5px solid #ffffff;
+    border-radius: 50px;
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+}
+
+/* Título del pedido */
+.pedido-title {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+    
+}
+
+/* Formulario de detalles */
+.pedido-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin: 30px 50px;
+}
+
+.form-column {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-column label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    padding: 10px 40px;
+    text-align: left;
+}
+
+
+.form-column input {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+    padding: 20px 200px;
+    text-align: left;
+}
+
+
+/* Métodos de pago y entrega */
+.metodo-pago,
+.metodo-entrega {
+    margin-bottom: 20px;
+    color: white;
+    margin: 30px 50px;
+}
+
+.metodo-pago p,
+.metodo-entrega p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.metodo-pago label,
+.metodo-entrega label {
+    margin-right: 10px;
+    color: white;
+}
+
+/* Resumen de pedido */
+.resumen-pedido {
+    margin-bottom: 20px;
+    color: white;
+    margin: 30px 50px;
+}
+
+.resumen-title {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Resumen total */
+.resumen-total {
+    background-color: #333;
+    padding: 10px;
+    color: orange;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.resumen-total p {
+    margin: 5px 0;
+}
+
+/* Botones */
+.pedido-buttons {
+    text-align: center;
+    margin: 30px 50px;
+}
+
+.pedido-button {
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 50px;
+    margin: 50px;
+    cursor: pointer;
+    font-size: 18px;
+}
 

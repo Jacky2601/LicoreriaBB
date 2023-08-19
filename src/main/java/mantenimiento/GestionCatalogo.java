@@ -399,7 +399,10 @@ public class GestionCatalogo implements CatalogoInterface {
 		
 		try {
 			con = MySQLConexion8.getConexion();
-			String sql = "SELECT * FROM tb_productos WHERE id_producto = ?";
+			String sql = "SELECT p.id_producto, c.nom_categoria, p.marca_prod, p.descripcion, p.precio, p.stock\r\n"
+					+ "FROM tb_productos p\r\n"
+					+ "JOIN tb_categorias c ON p.id_categoria = c.id_categoria\r\n"
+					+ "WHERE p.id_producto = ?";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, id_producto);
 			//pst.setInt(2, 1);
