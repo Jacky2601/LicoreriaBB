@@ -1049,6 +1049,34 @@ partecontainer1 {
     padding: 10px 50px;
     margin: 50px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 50px;
 }
+
+/*REALIZADO FINAL DEL PEDIDO*/
+.realizado {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+	 text-align: center;
+}
+
+.realizado h1 {
+   	 text-align: center;
+   	 margin: 150px 100px
+}
+
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+@keyframes rotateText {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(50deg); }
+}
+
+
 

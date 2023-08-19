@@ -41,8 +41,16 @@
         </div>
 </header>
 
+<div class="realizado">
+	<h1>PEDIDO REALIZADO CON ÉXITO!</h1>
+	<h1>Muchas gracias por tu preferencia, estaremos contactándonos contigo cuando tengamos listo tu pedido</h1>
+</div>
 
-
+<div class="regreso2">
+   	 	<a href="Index.jsp">
+        <button class="view-more-button">REGRESAR</button>
+    	</a>
+	</div>
 
 <footer class="footer">
         <div class="disclaimer-bar">
@@ -77,3 +85,17 @@
 </body>
 </html>
 <script src="js/carrusel.js"></script>
+<script>
+    // Colores de fondo que cambian
+    const coloresFondo = ["#FFD700", "#FFA07A", "#87CEEB", "#90EE90", "#FFC0CB"];
+
+    // Función para cambiar el fondo de manera aleatoria
+    function cambiarFondo() {
+        const realizadoDiv = document.querySelector(".realizado");
+        const colorAleatorio = coloresFondo[Math.floor(Math.random() * coloresFondo.length)];
+        realizadoDiv.style.backgroundColor = colorAleatorio;
+    }
+
+    // Cambiar el fondo cada 3 segundos
+    setInterval(cambiarFondo, 3000);
+</script>
