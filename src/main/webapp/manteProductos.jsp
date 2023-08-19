@@ -58,65 +58,112 @@
 			<section class="container1">
 
 				
-
 				<!-- Formulario -->
-				<form action="crudDistritoDelivery" method="post">
-					<div class="form-group">
-						<label for="inputCodigo">Código del Distrito:</label> <input
-							name="txtCodigo" value="${d.idDistrito}" class="form-control"
-							id="inputCodigo" placeholder="Ingrese Código del Distrito">
-					</div>
+				<form action="crudProductos" method="post">
+						<div class="form-group">
+							<label for="inputCodigo">Código del Producto:</label> <input
+								name="txtCodigo" value="${p.id_producto }" class="form-control"
+								id="inputCodigo" placeholder="Ingrese Código">
+						</div>
+						
+						<div class="form-group">
+							<label for="inputCategoria">Categoría:</label> <select
+								name="cboCategoria" class="form-control"
+								id="exampleFormControlSelect1">
+								<option value='-1'>Seleccione</option>
+								<option value='1'>Vino</option>
+								<option value='2'>Whisky</option>
+								<option value='3'>Tequila</option>
+								<option value='4'>Ron</option>
+								<option value='5'>Champange</option>
+								<option value='6'>Vodka</option>
+								<option value='7'>Gin</option>
+								<option value='8'>Pisco</option>
+								<option value='9'>Otros licores</option>
+							</select>
+						</div>
+						
 
-					<div class="form-group">
-						<label for="inputDescripcion">Nombre del Distrito:</label> <input
-							name="txtNombre" value="${d.nombreDistrito }"
-							class="form-control" id="inputNombreDistrito"
-							placeholder="Ingrese nombre del distrito">
-					</div>
+						<div class="form-group">
+							<label for="inputMarcaProd">Marca del Producto:</label> <input
+								name="txtMarca" value="${p.marca_prod }" class="form-control"
+								id="inputMarcaProd"
+								placeholder="Ingrese la marca del producto">
+						</div>
 
+						<div class="form-group">
+							<label for="inputDescripcion">Descripción:</label> <input
+								name="txtDescripcion" value="${p.descripcion }"
+								class="form-control" id="inputDescripcion"
+								placeholder="Ingrese la descripción del producto">
+						</div>
+						
+						
+						<div class="form-group col-md-6">
+							<label for="inputPrecio">Precio:</label> <input type="number"
+								name="txtPrecio" value="${p.precio }" class="form-control"
+								id="inputPrecio" placeholder="0.00" min="0" step="0.01">
+						</div>
+						
+																		
+						<div class="form-group col-md-6">
+							<label for="inputStock">Stock:</label> <input type="number"
+								name="txtStock" value="${p.stock }" class="form-control"
+								id="inputStock" placeholder="0" min="0">
+						</div>
+						
 
-					<div class="form-group">
-						<label for="inputEstado">Estado:</label> <select name="cboEstado"
-							class="form-control" id="exampleFormControlSelect1">
-							<option value='-1'>Seleccione</option>
-							<option value='1'>Activo</option>
-							<option value='2'>Eliminado</option>
-						</select>
-					</div>
+						<div class="form-group col-md-6">
+							<label for="inputEstado">Estado:</label> <select name="cboEstado"
+								class="form-control" id="exampleFormControlSelect1">
+								<option value='-1'>Seleccione</option>
+								<option value='1'>Activo</option>
+								<option value='2'>Eliminado</option>
+							</select>
+						</div>
 
+						<br>
 
-					<br>
-				<div class="botonesmantenimiento">
-					<button type="submit" name="btnAccion" value="registrar"
-						class="btn btn-primary">Registrar</button>
-					<button  type="submit" name="btnAccion" value="actualizar"
-						class="btn btn-primary">Actualizar</button>
-					<button type="submit" name="btnAccion" value="eliminar"
-						class="btn btn-danger">Eliminar</button>
-					<button  type="submit" name="btnAccion" value="listado"
-						class="btn btn-warning">Listado</button>
-				</div>
-				</form>
-				<br> ${mensaje }
+						<button type="submit" name="btnAccion" value="registrar"
+							class="btn btn-primary">Registrar</button>
+						<button type="submit" name="btnAccion" value="actualizar"
+							class="btn btn-primary">Actualizar</button>
+						<button type="submit" name="btnAccion" value="eliminar"
+							class="btn btn-danger">Eliminar</button>
+						<button type="submit" name="btnAccion" value="listado"
+							class="btn btn-warning">Listado</button>
+
+					</form>
+				
+					<br> ${mensaje }
 			</section></div>
+			
 				<div class= "container2">
 				<table class="table">
 
 					<tr>
-						<th>Código del Distrito</th>
-						<th>Nombre del Distrito</th>
+						<th>Código del Producto</th>
+						<th>Categoria</th>
+						<th>Marca del Producto</th>
+						<th>Descripción</th>
+						<th>Precio</th>
+						<th>Stock</th>	
 					</tr>
 
 					<%
-					GestionDistritoDelivery gd = new GestionDistritoDelivery();
-					ArrayList<DistritoDelivery> listado = gd.listado();
+					GestionProducto gp = new GestionProducto();
+					ArrayList<Producto> listado = gp.listado();
 
 					if (listado != null) {
-						for (DistritoDelivery d : listado) {
+						for (Producto p : listado) {
 					%>
 					<tr>
-						<td><%=d.getIdDistrito()%></td>
-						<td><%=d.getNombreDistrito()%></td>
+						<td><%=p.getId_producto()%></td>
+						<td><%=p.getId_categoria()%></td>
+						<td><%=p.getMarca_prod()%></td>
+						<td><%=p.getDescripcion()%></td>
+						<td><%=p.getPrecio()%></td>
+						<td><%=p.getStock()%></td>
 					</tr>
 					<%
 					}
