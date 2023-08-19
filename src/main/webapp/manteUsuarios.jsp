@@ -30,12 +30,13 @@
         </div>
         <div class="login-container">
     	<% if (session.getAttribute("u") != null) { %>
-        	<div id="ingresado1">
+        	<div class="ingreso" id="ingresado1">
+        	
 	            <p> <strong> ${u.getNombre() } ${u.apellidoPat } ${u.apellidoMat }</strong></p>
-	            <button class="nav-item active">
-	                <a class="nav-link" href="crudUsu?btnAccion=logout"> Cerrar Sesión</a>
+	            <button class="cerrarsesion">
+	                <a class="botonusu" href="crudUsu?btnAccion=logout"> Cerrar Sesión</a>
 	            </button>
-	            <span class="sr-only"></span>
+	            
         	</div>
     	<% } else { %>
 	        <a href="login.jsp" id="ingreso1"> INGRESA O REGÍSTRATE 
@@ -111,7 +112,7 @@
 						</select>
 					</div>
 
-					
+					<div class="botonesmantenimiento">
 					<button type="submit" name="btnAccion" value="registrar"
 						class="btn btn-primary">Registrar</button>
 					<button type="submit" name="btnAccion" value="actualizar"
@@ -122,7 +123,7 @@
 						class="btn btn-warning">Listado</button>
 					<!-- <button type="submit" name="btnAccion" value="q"
 						class="btn btn-warning">Buscar</button> -->
-
+					</div>
 				</form>
 				<br> ${mensaje }
 			</section></div>

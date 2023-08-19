@@ -48,8 +48,8 @@
     <nav class="navbar">
         <ul>
             <li><a href="Index.jsp">INICIO</a></li>
-            <li><a href="catalogo?btnAccion=listado">VINOS</a></li>
-            <li><a href="productos.jsp">LICORES</a></li>
+            <li><a href="catalogo?btnAccion=listarVino">VINOS</a></li>
+            <li><a href="catalogo?btnAccion=listarWhisky">LICORES</a></li>
             <li><a href="nosotros.jsp">NOSOTROS</a></li>
         </ul>
     </nav>
@@ -68,8 +68,10 @@
         </a>
     </section>
     <div class="buttons">
-        <button class="buy-button">COMPRAR</button>
-        <button class="view-more-button">VER MÁS</button>
+    	<a href="catalogo?btnAccion=listarVino">
+        <button class="buy-button">COMPRAR</button></a>
+        <a href="catalogo?btnAccion=listarWhisky">
+        <button class="view-more-button">VER MÁS</button></a>
     </div>
 <footer class="footer">
         <div class="disclaimer-bar">

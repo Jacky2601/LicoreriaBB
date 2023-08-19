@@ -85,13 +85,17 @@ function mostrarSeccion(id) {
     }
 }
 
+
+
+/*
 function mostrarVino() {
-    window.location.href = "Carta.jsp?showVino=true";
+  window.location.href = "Carta.jsp?showVino=true";
 }
 
 function mostrarWhisky() {
     window.location.href = "Carta.jsp?showWhisky=true";
-}
+}*/
+
 
 
 

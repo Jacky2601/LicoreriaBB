@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="model.*"%>
+<%@page import="mantenimiento.*"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Detalle Productos</title>
+    <title>Detalle Producto</title>
     <link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
 </head>
 <body>
@@ -45,26 +48,89 @@
             </a>
         </div>
 </header>
-    <nav class="barraProducto">
-        <ul>
-            <li><a href="Index.jsp"></a></li>
-            <li><a href="Index.jsp">VINOS</a></li>
-            <li><a href="Index.jsp">LICORES</a></li>
-            <li><a href="nosotros.jsp"></a></li>
-        </ul>
-    </nav>
-    <section class="">
-       
-    </section>
-    <section class="products-section">
-        <!-- Aquí irá la sección de productos -->
-       
-    </section>
     
-    <div class="buttons">
-        <button class="buy-button">COMPRAR</button>
-        <button class="view-more-button">VER MÁS</button>
-    </div>
+    <section class="products-section">
+
+		<%
+		Producto prod = (Producto) request.getAttribute("pro");
+		boolean seRegistro = (boolean) request.getAttribute("estadoReg");
+		%>
+
+		<!-- Aquí irá la sección de productos -->
+		<div class="cuadros3carta">
+			<br>
+			<!-- Ejemplo de un producto -->
+			<div class="cuadrocarta3">
+
+				<img class="imagenproducto3" id="pollo15"
+					src="imagenes/1-4 POLLO.jpg" alt="producto">
+				<div class="cuadrito3">
+					<h2 class="nombre3"><%=prod.getNombreprod()%></h2>
+					<p class="descripcion3"><%=prod.getDescripcion()%></p>
+					<br>
+					<h3 class="precio3" id="precio1">
+						S/ <span id="precio"><%=prod.getPrecio()%></span>
+					</h3>
+					<br>
+
+					<form action="pedido" method="post">
+						<div>
+							<p>Cantidad:</p>
+							<button class="buttons3" id="decrement" type="button">-</button>
+							<input class="cant3" type="text" id="quantity" value="1"
+								name="cantidad">
+							<button class="buttons3" id="increment" type="button">+</button>
+						</div>
+						<p>
+							SubTotal: S/. <span id="subtotal"><%=prod.getPrecio()%></span>
+						</p>
+						<br>
+						<div>
+							<label>Nombre completo de la persona que recibe el pedido</label>
+							<input class="input-text" type="text" id="cliente"
+								name="nombreCliente">
+						</div>
+						<br>
+						<div>
+							<label>Dirección de la persona que recibe el pedido</label> <input
+								class="input-text" type="text" id="direccionCliente"
+								name="direccionCliente">
+						</div>
+
+						<input type="hidden" name="idProducto"
+							value="<%=prod.getIdprod()%>"> <input type="hidden"
+							name="precioProducto" value="<%=prod.getPrecio()%>">
+						<%
+						if (seRegistro) {
+						%>
+						<div>
+							<h3 style="background-color: green; padding: 10px;">Pedido
+								registrado con éxito</h3>
+						</div>
+						<%
+						}
+						%>
+
+						<div class="buttons3">
+							<button class="buy-button" type="submit" name="accion"
+								value="regPedido">SOLICITAR PEDIDO</button>
+						</div>
+						<br>
+					</form>
+				</div>
+			</div>
+
+			<!-- Se modifica de acuerdo al producto selecionado -->
+		</div>
+
+	</section>
+
+	<div class="regreso2" style="margin-top: 8rem;">
+		<a href="Index.jsp">
+			<button class="view-more-button">REGRESAR</button>
+		</a>
+	</div>
+	
 <footer class="footer">
         <div class="disclaimer-bar">
             <p class="disclaimer-text">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>

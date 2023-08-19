@@ -65,7 +65,7 @@
     	</a>
     </div>
     
-    <h2 class="texto3">REPORTES</h2>
+    <h2 class="texto3">CONSULTAS Y REPORTES</h2>
     
     <div class="botones3">
 	<a href="reportProductos.jsp">

@@ -58,15 +58,16 @@
 
 .filatragos {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 2px;
 }
 
 .divtraguito {
     width: 14%; /* Ajusta el ancho según tu diseño */
-    height: 460px; /* Ajusta la altura según tu diseño */
-    margin: 20px 10px;
+    height: 470px; /* Ajusta la altura según tu diseño */
+    margin: 20px 20px;
     margin-bottom: 30px;
     background-color: white;
     padding: 10px;
@@ -77,12 +78,12 @@
 .imgtrago {
     width: 210px; /* Ajusta el ancho de la imagen al 100% del cuadro */
     height: 200px; /* Para mantener la proporción de la imagen */
-    margin: 0 11px; /* Centra la imagen horizontalmente */
+    margin: 1px 8px; /* Centra la imagen horizontalmente */
 }
 
 .categoria ,.marca {
     text-align: center; /* Alinear el texto a la izquierda */
-    margin-bottom: 2px; /* Agregar espacio de 20px debajo del párrafo */
+    margin-bottom: 0px; /* Agregar espacio de 20px debajo del párrafo */
 	font-size: 20px; /* Tamaño de letra 20px */
 }
 
@@ -238,14 +239,23 @@ body {
     max-height: 400px;
 }
 
-/* Estilos para la sección de productos */
-.products-section {
-    /* Agrega aquí los estilos para la sección de productos */
+/* Estilos  boton sesion*/
+.cerrarsesion,.botonusu {
+    padding: 5px 5px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 1px;
+    font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
+    font-size: 15px; /* Tamaño de letra 20px */
 }
 
-/* Estilos para el panel de producto */
-.product-panel {
-    /* Agrega aquí los estilos para el panel de producto */
+.ingreso {
+    text-align: center;
+    margin: 5px 0;
+    
 }
 
 /* Estilos para los botones */
@@ -667,3 +677,92 @@ partecontainer1 {
     margin: 20px 80px;
     font-size: 30px;
 }
+
+
+/* DETALLE DE PRODUCTO*/
+/* DETALLE DE PRODUCTO*/
+/* DETALLE DE PRODUCTO*/
+
+.cuadros3carta {
+    display: flex;
+    align-items: Left;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.cuadrocarta3 {
+    display: flex;
+    width: 100%; /* Ajusta el ancho del cuadro al 100% del contenedor */
+    height: 700px; /* Ajusta la altura según tu diseño */
+    margin: 20px 0;
+    color: white;
+    background-color: black;
+    border: 1px solid #000000;
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+}
+
+.cuadrocarta3 p {
+    margin: 5px 0;
+    text-align: Left;
+    font-size: 25px;
+}
+
+.imagenproducto3 {
+	width: 50%; /* Ajusta el ancho de la imagen */
+    height: 100%; /* Ajusta la altura al 100% del cuadro */
+    object-fit: cover; /* Ajusta la imagen para que ocupe el espacio sin deformarse */
+    margin-left: 20px; /* Agrega un margen a la izquierda para separar la imagen del texto */
+}
+
+.nombre3 {
+    text-align: Left; /* Alinear el texto a la izquierda */
+    color:orange;
+    margin-bottom: 5px; /* Agregar espacio de 20px debajo del párrafo */
+	font-size: 40px; /* Tamaño de letra 20px */
+}
+
+.precio3 {
+    text-align: Left; /* Alinear el texto a la izquierda */
+    color:orange;
+    margin-bottom: 5px; /* Agregar espacio de 20px debajo del párrafo */
+	font-size: 30px; /* Tamaño de letra 20px */
+}
+
+.cuadrito3{
+	width: 40%; /* Ajusta el ancho del cuadro del texto */
+	margin: 5px 50px;
+}
+
+.nombre3, .descripcion3, .precio3 {
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.buttons3{
+    margin: 20px 0;
+    font-size: 25px;
+    padding: 15px 15px;
+    background-color: #b81f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+.cant3 {
+	margin: 5px 0;
+    font-size: 25px;
+    padding: 15px 10px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+	width: 50px; /* Puedes ajustar el valor según tu diseño */
+}
+
+

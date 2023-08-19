@@ -15,6 +15,19 @@ public class Producto {
 		
 	}
 	
+//PARA CATALOGOS OJITO
+	
+	public Producto(int id_producto, String categoria, String marca_prod, String descripcion, double precio,
+			int stock) {
+		this.id_producto = id_producto;
+		this.categoria = categoria;
+		this.marca_prod = marca_prod;
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.stock = stock;
+		}
+
+//
 
 	public Producto(int id_categoria, String marca_prod, String descripcion, double precio, int stock, int estado) {
 		super();
