@@ -13,13 +13,10 @@
             <img  class="logo" src="imagenes/LOGOLICO.jpeg"  alt=" ">
             </a>
         </div>
-        
-        
         <div class="locations-container">
             <a href="locales.jsp">
             LOCALES  
                 <img class="location-icon" src="imagenes/ubica.png" alt="">
-                
             </a>
         </div>
         <div class="login-container">
@@ -38,7 +35,7 @@
     	<% } %>
 		</div>
         <div class="cart-container">
-            <a href="carrito.jsp">
+            <a href="carritoCompras.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>
@@ -54,19 +51,125 @@
     <section class="panel">
         <img class="panel-image" id="imgcab" src="imagenes/IMG8.jpg" alt="Panel de Imagen">
     </section>
-    <section class="products-section">
-        <!-- Aquí irá la sección de productos -->
-        <a href="Index.jsp">
-        <img class="panel-image" src="imagenes/produ.jpg" alt="Panel de Imagen">
-        </a>
-    </section>
+    
+        <section class="section-Inicio" id="InicioLic">
+    <!-- EMPIEZA EL CUADRO DEL PRODUCTO -->
+	<div class="filatragos">
+	
+    
+    <div class="divtraguito">
+    
+        <img class="imgtrago" id="traguis" src="productos/PRO47.jpg" alt="index">
+        
+        <h2 class="categoria">Whisky</h2>
+        <h2 class="marca">JOHNNIE WALKER</h2>
+        <p class="descripcion">18 años Botella 750ml</p>
+        <p class="stock">Stock: 250 Unidades</p>
+        <h3 class="precio" id="precio">S/. <span id="precio1">349.00</span></h3>
+        
+        <div class="buttonslicor">
+        	<a href="catalogo?btnAccion=buscarIDS&id=47">
+        	<button class="buy-buttonlicor">COMPRAR</button>
+        	</a>
+    	</div>
+    	
+        <br>
+        
+    </div>
+    
+    <div class="divtraguito">
+    
+        <img class="imgtrago" id="traguis" src="productos/PRO48.jpg" alt="index">
+        
+        <h2 class="categoria">Whisky</h2>
+        <h2 class="marca">JOHNNIE WALKER</h2>
+        <p class="descripcion">Double Black Label Botella 750ml</p>
+        <p class="stock">Stock: 300 Unidades</p>
+        <h3 class="precio" id="precio">S/. <span id="precio1">149.90</span></h3>
+        
+        <div class="buttonslicor">
+        	<a href="catalogo?btnAccion=buscarIDS&id=48">
+        	<button class="buy-buttonlicor">COMPRAR</button>
+        	</a>
+    	</div>
+    	
+        <br>
+        
+    </div>
+    
+    <div class="divtraguito">
+    
+        <img class="imgtrago" id="traguis" src="productos/PRO49.jpg" alt="index">
+        
+        <h2 class="categoria">Whisky</h2>
+        <h2 class="marca">JOHNNIE WALKER</h2>
+        <p class="descripcion">Gold Label Botella 750ml</p>
+        <p class="stock">Stock: 280 Unidades</p>
+        <h3 class="precio" id="precio">S/. <span id="precio1">204.90</span></h3>
+        
+        <div class="buttonslicor">
+        	<a href="catalogo?btnAccion=buscarIDS&id=49">
+        	<button class="buy-buttonlicor">COMPRAR</button>
+        	</a>
+    	</div>
+    	
+        <br>
+        
+    </div>
+    
+    <div class="divtraguito">
+    
+        <img class="imgtrago" id="traguis" src="productos/PRO46.jpg" alt="index">
+        
+        <h2 class="categoria">Whisky</h2>
+        <h2 class="marca">JOHNNIE WALKER</h2>
+        <p class="descripcion">Blue Label Botella 750ml</p>
+        <p class="stock">Stock: 150 Unidades</p>
+        <h3 class="precio" id="precio">S/. <span id="precio1">959.90</span></h3>
+        
+        <div class="buttonslicor">
+        	<a href="catalogo?btnAccion=buscarIDS&id=46">
+        	<button class="buy-buttonlicor">COMPRAR</button>
+        	</a>
+    	</div>
+    	
+        <br>
+        
+    </div>
+    
+    <div class="divtraguito">
+    
+        <img class="imgtrago" id="traguis" src="productos/PRO53.jpg" alt="index">
+        
+        <h2 class="categoria">Whisky</h2>
+        <h2 class="marca">JACK DANIELS</h2>
+        <p class="descripcion">Sinatra Select Botella 1L</p>
+        <p class="stock">Stock: 240 Unidades</p>
+        <h3 class="precio" id="precio">S/. <span id="precio1">799.90</span></h3>
+        
+        <div class="buttonslicor">
+        	<a href="catalogo?btnAccion=buscarIDS&id=53">
+        	<button class="buy-buttonlicor">COMPRAR</button>
+        	</a>
+    	</div>
+    	
+        <br>
+        
+    </div>
+    
+    </div>
+	
+	
+	</section>
+        
+   
     <section class="product-panel">
-    	<a href="Index.jsp">
+    	<a href="catalogo?btnAccion=buscarIDS&id=3">
         <img class="panel-image" src="imagenes/BAN1.jpg" alt="Panel de Imagen">
         </a>
     </section>
     <div class="buttons">
-    	<a href="catalogo?btnAccion=listarVino">
+    	<a href="catalogo?btnAccion=buscarIDS&id=3">
         <button class="buy-button">COMPRAR</button></a>
         <a href="catalogo?btnAccion=listarWhisky">
         <button class="view-more-button">VER MÁS</button></a>

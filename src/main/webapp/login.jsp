@@ -15,13 +15,10 @@
             <img  class="logo" src="imagenes/LOGOLICO.jpeg"  alt=" ">
             </a>
         </div>
-        
-        
         <div class="locations-container">
             <a href="locales.jsp">
             LOCALES  
                 <img class="location-icon" src="imagenes/ubica.png" alt="">
-                
             </a>
         </div>
         <div class="login-container">
@@ -40,7 +37,7 @@
     	<% } %>
 		</div>
         <div class="cart-container">
-            <a href="carrito.jsp">
+            <a href="carritoCompras.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>

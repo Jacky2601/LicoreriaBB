@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pedido Venta</title>
+    <title>Realizado</title>
     <link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
 </head>
 <body>
@@ -13,13 +13,10 @@
             <img  class="logo" src="imagenes/LOGOLICO.jpeg"  alt=" ">
             </a>
         </div>
-        
-        
         <div class="locations-container">
             <a href="locales.jsp">
             LOCALES  
                 <img class="location-icon" src="imagenes/ubica.png" alt="">
-                
             </a>
         </div>
         <div class="login-container">
@@ -38,24 +35,23 @@
     	<% } %>
 		</div>
         <div class="cart-container">
-            <a href="carrito.jsp">
+            <a href="carritoCompras.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>
 </header>
-    
-    <section class="">
-       
-    </section>
-    <section class="products-section">
-        <!-- Aquí irá la sección de productos -->
-       
-    </section>
-    
-    <div class="buttons">
-        <button class="buy-button">COMPRAR</button>
-        <button class="view-more-button">VER MÁS</button>
-    </div>
+
+<div class="realizado">
+	<h1>PEDIDO REALIZADO CON ÉXITO!</h1>
+	<h1>Muchas gracias por tu preferencia, estaremos contactándonos contigo cuando tengamos listo tu pedido</h1>
+</div>
+
+<div class="regreso2">
+   	 	<a href="Index.jsp">
+        <button class="view-more-button">REGRESAR</button>
+    	</a>
+	</div>
+
 <footer class="footer">
         <div class="disclaimer-bar">
             <p class="disclaimer-text">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>
@@ -89,3 +85,17 @@
 </body>
 </html>
 <script src="js/carrusel.js"></script>
+<script>
+    // Colores de fondo que cambian
+    const coloresFondo = ["#FFD700", "#FFA07A", "#87CEEB", "#90EE90", "#FFC0CB"];
+
+    // Función para cambiar el fondo de manera aleatoria
+    function cambiarFondo() {
+        const realizadoDiv = document.querySelector(".realizado");
+        const colorAleatorio = coloresFondo[Math.floor(Math.random() * coloresFondo.length)];
+        realizadoDiv.style.backgroundColor = colorAleatorio;
+    }
+
+    // Cambiar el fondo cada 3 segundos
+    setInterval(cambiarFondo, 3000);
+</script>
