@@ -99,4 +99,44 @@ function mostrarWhisky() {
 
 
 
+/sumando cantidad detalle/
+const decrementButton = document.getElementById("decrement");
+const incrementButton = document.getElementById("increment");
+const quantityInput = document.getElementById("quantity");
+const totalSpan = document.getElementById("subtotal");
+const precioSpan = document.getElementById("precio"); // Cambia "precio" a "precioSpan"
+const totalSpan2 = document.getElementById("subtotal2");
+
+let quantity = 0;
+const precio = parseFloat(precioSpan.textContent); // Convierte el texto del precio a número
+
+decrementButton.addEventListener("click", () => {
+    if (quantity > 0) {
+        quantity--;
+        updateQuantityAndTotal();
+    }
+});
+
+incrementButton.addEventListener("click", () => {
+    quantity++;
+    updateQuantityAndTotal();
+});
+
+function updateQuantityAndTotal() {
+    quantityInput.value = quantity;
+    totalSpan.textContent = (precio * quantity).toFixed(2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 

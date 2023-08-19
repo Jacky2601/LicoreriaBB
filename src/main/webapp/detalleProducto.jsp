@@ -62,14 +62,16 @@
 			<!-- Ejemplo de un producto -->
 			<div class="cuadrocarta3">
 
-				<img class="imagenproducto3" id="pollo15"
-					src="imagenes/1-4 POLLO.jpg" alt="producto">
+				<img class="imagenproducto3" id="traguito3"
+					src="productos/PRO<%=prod.getId_producto()%>.jpg" alt="producto">
 				<div class="cuadrito3">
-					<h2 class="nombre3"><%=prod.getNombreprod()%></h2>
+					<h2 class="nombre3"><%=prod.getCategoria()%></h2>
+					<h2 class="nombre3"><%=prod.getMarca_prod()%></h2>
 					<p class="descripcion3"><%=prod.getDescripcion()%></p>
+					<p class="stock">Stock: <%=prod.getStock()%> Unidades</p>
 					<br>
 					<h3 class="precio3" id="precio1">
-						S/ <span id="precio"><%=prod.getPrecio()%></span>
+						S/. <span id="precio"><%= String.format("%.2f", prod.getPrecio()) %></span>
 					</h3>
 					<br>
 
@@ -98,8 +100,8 @@
 						</div>
 
 						<input type="hidden" name="idProducto"
-							value="<%=prod.getIdprod()%>"> <input type="hidden"
-							name="precioProducto" value="<%=prod.getPrecio()%>">
+							value="<%=prod.getId_producto()%>"> <input type="hidden"
+							name="precioProducto" value="<%= String.format("%.2f", prod.getPrecio()) %>">
 						<%
 						if (seRegistro) {
 						%>
