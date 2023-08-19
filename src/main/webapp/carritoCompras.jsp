@@ -14,9 +14,7 @@
             </a>
         </div>
         
-        <div class="search-container">
-            <input type="text" class="search" placeholder="Buscar Producto">
-        </div>
+        
         <div class="locations-container">
             <a href="locales.jsp">
             LOCALES  
@@ -46,18 +44,59 @@
         </div>
 </header>
    
-    <section class="">
-       
-    </section>
     <section class="products-section">
-        <!-- Aquí irá la sección de productos -->
-       
-    </section>
-    
-    <div class="buttons">
-        <button class="buy-button">COMPRAR</button>
-        <button class="view-more-button">VER MÁS</button>
+    <!-- Aquí irá la sección de productos -->
+	<div class="cuadros4canasta">
+    <!-- Ejemplo de un producto -->
+    <div class="cuadrocanasta4">
+    	
+        <img class="imagenproducto4" id="pollo15" src="imagenes/1-4 POLLO.jpg" alt="producto">
+        <div class="cuadrito4">
+        	<h2 class="nombre4">1/4 De Pollo a la Brasa</h2>
+        	<h3 class="precio4" id="precio1">S/.<span id="precio">24.90</span></h3>
+        <div class= "bloque4">
+        <p>Cantidad:</p>
+        <div class= "bloque41">
+        <button class="buttons4" id="decrement">-</button>
+        <input class="cant4" type="text" id="quantity" value="1">
+        <button class="buttons4" id="increment">+</button>
+        </div>
+        </div>
+        <p>SubTotal: S/. <span id="subtotal">0</span></p>
+    	
+        <div>
+        	<a href="">
+        	<button class="buy-button4">ELIMINAR</button>
+        	</a>
+    	</div>
+        <br>
+    	</div>
+    	</div>
+    <!-- Se modifica de acuerdo al producto selecionado -->
+	</div>
+
+	</section>
+   <hr class="linea14">
+   
+    <div class="totalcanasta">
+        <p>SubTotal: S/. <span id="subtotal2">0</span></p>
     </div>
+   
+   
+    <div class="buttonscana">
+    	<a href="Pedido.jsp">
+        <button class="view-more-button14">REALIZAR PEDIDO</button>
+        </a>
+        <a href="Carta.jsp">
+        <button class="view-more-button14">SEGUIR COMPRANDO</button>
+        </a>
+    </div>
+    
+    <div class="regreso2">
+   	 	<a href="Index.jsp">
+        <button class="view-more-button">REGRESAR</button>
+    	</a>
+		</div>
 <footer class="footer">
         <div class="disclaimer-bar">
             <p class="disclaimer-text">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>

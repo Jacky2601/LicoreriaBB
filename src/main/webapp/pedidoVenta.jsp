@@ -14,9 +14,7 @@
             </a>
         </div>
         
-        <div class="search-container">
-            <input type="text" class="search" placeholder="Buscar Producto">
-        </div>
+        
         <div class="locations-container">
             <a href="locales.jsp">
             LOCALES  

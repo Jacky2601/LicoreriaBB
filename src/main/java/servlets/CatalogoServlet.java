@@ -221,8 +221,7 @@ public class CatalogoServlet extends HttpServlet {
 		System.out.println(p);
 		
 		// enviar el obj de producto como atributo a la pagina
-		request.setAttribute("pro", p);
-		request.setAttribute("estadoReg", false); // Validacion de registro
+		request.setAttribute("p", p);
 
 		// reenvia a la pagina
 		request.getRequestDispatcher("detalleProducto.jsp").forward(request, response);
