@@ -55,14 +55,14 @@ public class CatalogoServlet extends HttpServlet {
 		int idprod = Integer.parseInt(request.getParameter("id"));
 
 		// obtener la informacion del producto, usando la clase gestion
-		Producto p = new GestionProducto().buscarProductoPorId(idprod);
+		//Producto p = new GestionProducto().buscarProductoPorId(idprod);
 		
 		System.out.println("ID PRO: " + idprod);
 		System.out.println("PRODUCTO");
-		System.out.println(p);
+		//System.out.println(p);
 		
 		// enviar el obj de producto como atributo a la pagina
-		request.setAttribute("pro", p);
+		//request.setAttribute("pro", p);
 		request.setAttribute("estadoReg", false); // Validacion de registro
 
 		// reenvia a la pagina
@@ -74,10 +74,10 @@ public class CatalogoServlet extends HttpServlet {
 		System.out.println("Ingreso al proceso catalogo");
 		
 		GestionProducto gp = new GestionProducto();
-		ArrayList<Producto> listarProducto = gp.listarProducto(); 
+		///ArrayList<Producto> listarProducto = gp.listarProducto(); 
 
 		// enviar el listado al jsp --> atributo
-		request.setAttribute("listarProducto", listarProducto);
+		//request.setAttribute("listarProducto", listarProducto);
 
 		// redireccionando a la pagina listado
 		request.getRequestDispatcher("productos.jsp").forward(request, response);
