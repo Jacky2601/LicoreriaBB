@@ -67,7 +67,11 @@
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
     
-        <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
+        <% if (p.getId_producto() > 105) { %>
+    		<img class="imgtrago" id="trago1" src="productos/PRO0.jpg" alt="Vino">
+		<% } else { %>
+		    <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
+		<% } %>
         
         <h2 class="categoria"><%=p.getCategoria()%></h2>
         <h2 class="marca"><%=p.getMarca_prod()%></h2>
@@ -104,7 +108,11 @@
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
     
-        <img class="imgtrago" id="trago2" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Whisky">
+        <% if (p.getId_producto() > 105) { %>
+    		<img class="imgtrago" id="trago1" src="productos/PRO0.jpg" alt="Vino">
+		<% } else { %>
+		    <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Whisky">
+		<% } %>
         
         <h2 class="categoria"><%=p.getCategoria()%></h2>
         <h2 class="marca"><%=p.getMarca_prod()%></h2>
@@ -141,8 +149,12 @@
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
     
-        <img class="imgtrago" id="trago3" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Tequila">
-        
+        <% if (p.getId_producto() > 105) { %>
+    		<img class="imgtrago" id="trago1" src="productos/PRO0.jpg" alt="Vino">
+		<% } else { %>
+		    <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
+		<% } %>
+		
         <h2 class="categoria"><%=p.getCategoria()%></h2>
         <h2 class="marca"><%=p.getMarca_prod()%></h2>
         <p class="descripcion"><%=p.getDescripcion()%></p>
@@ -178,8 +190,12 @@
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
     
-        <img class="imgtrago" id="trago4" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Ron">
-        
+        <% if (p.getId_producto() > 105) { %>
+    		<img class="imgtrago" id="trago1" src="productos/PRO0.jpg" alt="Vino">
+		<% } else { %>
+		    <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
+		<% } %>
+		
         <h2 class="categoria"><%=p.getCategoria()%></h2>
         <h2 class="marca"><%=p.getMarca_prod()%></h2>
         <p class="descripcion"><%=p.getDescripcion()%></p>
@@ -215,8 +231,12 @@
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
     
-        <img class="imgtrago" id="trago5" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Champange">
-        
+        <% if (p.getId_producto() > 105) { %>
+    		<img class="imgtrago" id="trago1" src="productos/PRO0.jpg" alt="Vino">
+		<% } else { %>
+		    <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
+		<% } %>
+		
         <h2 class="categoria"><%=p.getCategoria()%></h2>
         <h2 class="marca"><%=p.getMarca_prod()%></h2>
         <p class="descripcion"><%=p.getDescripcion()%></p>
@@ -252,8 +272,12 @@
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
     
-        <img class="imgtrago" id="trago6" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vodka">
-        
+        <% if (p.getId_producto() > 105) { %>
+    		<img class="imgtrago" id="trago1" src="productos/PRO0.jpg" alt="Vino">
+		<% } else { %>
+		    <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
+		<% } %>
+		
         <h2 class="categoria"><%=p.getCategoria()%></h2>
         <h2 class="marca"><%=p.getMarca_prod()%></h2>
         <p class="descripcion"><%=p.getDescripcion()%></p>
@@ -289,8 +313,12 @@
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
     
-        <img class="imgtrago" id="trago7" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Gin">
-        
+        <% if (p.getId_producto() > 105) { %>
+    		<img class="imgtrago" id="trago1" src="productos/PRO0.jpg" alt="Vino">
+		<% } else { %>
+		    <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
+		<% } %>
+		
         <h2 class="categoria"><%=p.getCategoria()%></h2>
         <h2 class="marca"><%=p.getMarca_prod()%></h2>
         <p class="descripcion"><%=p.getDescripcion()%></p>
@@ -326,8 +354,12 @@
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
     
-        <img class="imgtrago" id="trago8" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Pisco">
-        
+        <% if (p.getId_producto() > 105) { %>
+    		<img class="imgtrago" id="trago1" src="productos/PRO0.jpg" alt="Vino">
+		<% } else { %>
+		    <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
+		<% } %>
+		
         <h2 class="categoria"><%=p.getCategoria()%></h2>
         <h2 class="marca"><%=p.getMarca_prod()%></h2>
         <p class="descripcion"><%=p.getDescripcion()%></p>
@@ -363,8 +395,12 @@
     <!-- DENTRO DEL DIV Y SIGUE EL DIV DE CONTENIDO -->
     <div class="divtraguito">
     
-        <img class="imgtrago" id="trago9" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Otros">
-        
+        <% if (p.getId_producto() > 105) { %>
+    		<img class="imgtrago" id="trago1" src="productos/PRO0.jpg" alt="Vino">
+		<% } else { %>
+		    <img class="imgtrago" id="trago1" src="productos/PRO<%=p.getId_producto()%>.jpg" alt="Vino">
+		<% } %>
+		
         <h2 class="categoria"><%=p.getCategoria()%></h2>
         <h2 class="marca"><%=p.getMarca_prod()%></h2>
         <p class="descripcion"><%=p.getDescripcion()%></p>

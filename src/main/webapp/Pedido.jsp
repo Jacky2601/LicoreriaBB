@@ -45,7 +45,7 @@
     
      <div class="pedido-container">
         <div class="pedido-header">
-            <h1 class="pedido-title">DETALLE DE PEDIDO</h1>
+            <h1 class="pedido-title">DATOS DE ENVIO</h1>
         </div>
 
         <div class="pedido-form">
@@ -80,10 +80,10 @@
             <label><input type="radio" name="metodoEntrega" value="RETIRO">Retiro en Tienda</label>
         </div>
 
-        <div class="resumen-pedido">
+        <!--  <div class="resumen-pedido">
             <h2 class="resumen-title">Resumen de pedido:</h2>
             
-            <!-- Cuadro de detalles del pedido aquí -->
+            
             
         </div>
 
@@ -92,12 +92,12 @@
             <p>Delivery: S/. <span id="delivery">0</span></p>
             <p>Total: S/. <span id="total">0</span></p>
         </div>
-
+-->
         <div class="pedido-buttons">
-        	<a href="Pedido.jsp">
+        	<a href="realizado.jsp">
             <button class="pedido-button">REALIZAR PEDIDO</button>
             </a>
-            <a href="CanastaCompras.jsp">
+            <a href="carritoCompras.jsp">
             <button class="pedido-button">REGRESAR ATRÁS</button>
             </a>
             <a href="Index.jsp">
