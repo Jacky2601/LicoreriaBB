@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import mantenimiento.GestionCatalogo;
-import model.Producto;
+import model.*;
 
 @WebServlet(name = "catalogo", 
 description = "Controlador para listar catalogo de productos", 
@@ -76,9 +76,102 @@ public class CatalogoServlet extends HttpServlet {
 			buscarIDS(request, response);
 			break;
 
+		case "añadirProductos":
+			añadirProductos(request, response);
+			break;
+			
+		case "eliminarProducto":
+            eliminarProductoDelCarrito(request , response);
+            break;
+
 		default:
 			break;
 		}
+	}
+
+	private void eliminarProductoDelCarrito(HttpServletRequest request ,HttpServletResponse response) throws ServletException, IOException {
+		// Obtener el ID del producto a eliminar desde el formulario
+	    int productoId = Integer.parseInt(request.getParameter("productoId"));
+
+	    // Obtener la lista del carrito desde la sesión
+	    ArrayList<Carrito> carrito = (ArrayList<Carrito>) request.getSession().getAttribute("carrito");
+
+	    // Verificar si el carrito no es null antes de usarlo
+	    if (carrito != null) {
+	        // Buscar el producto en el carrito y eliminarlo
+	        for (int i = 0; i < carrito.size(); i++) {
+	            if (carrito.get(i).getProducto().getId_producto() == productoId) {
+	                carrito.remove(i);
+	                break; // Puedes romper el bucle ya que encontraste el producto
+	            }
+	        }
+
+	        // Actualizar la sesión con el carrito modificado
+	        request.getSession().setAttribute("carrito", carrito);
+	    }
+
+	 // Redirigir a la página del carrito
+        response.sendRedirect("carritoCompras.jsp");
+	    }
+
+
+
+	private void añadirProductos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		  try {
+		        int idprod = Integer.parseInt(request.getParameter("id"));
+		        int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+
+		        // Validación de entrada y manejo de excepciones si es necesario
+
+		        GestionCatalogo gp = new GestionCatalogo();
+		        Producto producto = gp.buscarIDS(idprod);
+
+		        if (producto != null) {
+		            // Recuperar el carrito de compras de la sesión
+		            ArrayList<Carrito> carrito = (ArrayList<Carrito>) request.getSession().getAttribute("carrito");
+
+		            if (carrito == null) {
+		                carrito = new ArrayList<>();
+		            }
+
+		         // Verificar si el producto ya existe en el carrito
+		            boolean productoExistente = false;
+		            for (Carrito item : carrito) {
+		                if (item.getProducto().getId_producto() == idprod) {
+		                    // El producto ya existe en el carrito, actualizar la cantidad
+		                    item.setCantidad(item.getCantidad() + cantidad);
+		                    productoExistente = true;
+		                    break;
+		                }
+		            }
+
+		            if (!productoExistente) {
+		                // Agregar el producto y cantidad al carrito
+		                Carrito item = new Carrito();
+		                item.setProducto(producto);
+		                item.setCantidad(cantidad);
+		                carrito.add(item);
+		            }
+
+		            // Actualizar el carrito en la sesión
+		            request.getSession().setAttribute("carrito", carrito);
+
+		            // Redirigir a la página del carrito
+		            response.sendRedirect("carritoCompras.jsp");
+		        } else {
+		            // Producto no encontrado, mostrar mensaje de error
+		            request.setAttribute("mensaje", "El producto no se encontró");
+		            request.getRequestDispatcher("error.jsp").forward(request, response);
+		        }
+		    } catch (NumberFormatException e) {
+		        // Manejo de errores de conversión de números
+		        request.setAttribute("mensaje", "Error en los parámetros de entrada");
+		        request.getRequestDispatcher("error.jsp").forward(request, response);
+		    } catch (Exception e) {
+		        // Manejo de otras excepciones
+		        request.setAttribute("mensaje", "Error interno en la aplicación");
+		        request.getRequestDispatcher("error.jsp").forward(request, response);
+		    }
 	}
 
 	private void listarOtros(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -210,22 +303,22 @@ public class CatalogoServlet extends HttpServlet {
 	
 	private void buscarIDS(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		System.out.println("Ingreso al proceso buscar por ID");
-		// leer el codigo del producto a buscar
-		int idprod = Integer.parseInt(request.getParameter("id"));
+	    // Leer el código del producto a buscar
+	    int idprod = Integer.parseInt(request.getParameter("id"));
 
-		// obtener la informacion del producto, usando la clase gestion
-		Producto p = new GestionCatalogo().buscarIDS(idprod);
-		
-		System.out.println("ID PRO: " + idprod);
-		System.out.println("PRODUCTO");
-		System.out.println(p);
-		
-		// enviar el obj de producto como atributo a la pagina
-		request.setAttribute("p", p);
+	    // Obtener la información del producto, usando la clase GestionCatalogo
+	    GestionCatalogo gp = new GestionCatalogo();
+	    Producto p = gp.buscarIDS(idprod);
 
-		// reenvia a la pagina
-		request.getRequestDispatcher("detalleProducto.jsp").forward(request, response);
-		
+	    System.out.println("ID PRO: " + idprod);
+	    System.out.println("PRODUCTO");
+	    System.out.println(p);
+
+	    // Enviar el objeto de producto como atributo a la página
+	    request.setAttribute("pro", p);
+
+	    // Reenviar a la página
+	    request.getRequestDispatcher("detalleProducto.jsp").forward(request, response);
 	}
 
 	

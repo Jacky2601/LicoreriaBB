@@ -709,10 +709,10 @@ partecontainer1 {
 }
 
 .imagenproducto3 {
-	width: 50%; /* Ajusta el ancho de la imagen */
+	width: 40%; /* Ajusta el ancho de la imagen */
     height: 100%; /* Ajusta la altura al 100% del cuadro */
     object-fit: cover; /* Ajusta la imagen para que ocupe el espacio sin deformarse */
-    margin-left: 20px; /* Agrega un margen a la izquierda para separar la imagen del texto */
+    margin-left: 150px; /* Agrega un margen a la izquierda para separar la imagen del texto */
 }
 
 .nombre3 {
@@ -766,16 +766,26 @@ partecontainer1 {
 }
 
 /* PRODUCTO EN CANASTITA*/
-
-.cuadros4canasta {
-    display: flex;
-    align-items: Left;
-    justify-content: center;
+.totalesgg{
+	
 }
 
+
+
+.cuadros4canasta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre elementos */
+    align-items: center; /* Alinear elementos verticalmente al centro */
+    justify-content: center; /* Alinear elementos horizontalmente al centro */
+}
+
+
 .cuadrocanasta4 {
+	width: calc(50% - 20px); /* Ancho del 50% del contenedor con espacio entre elementos */
     display: flex;
-    width: 80%; /* Ajusta el ancho del cuadro al 100% del contenedor */
+    flex-wrap: wrap;
+    width: auto; /* Ajusta el ancho del cuadro al 100% del contenedor */
     height: 350px; /* Ajusta la altura según tu diseño */
     margin: 15px 0;
     color: white;
@@ -792,11 +802,20 @@ partecontainer1 {
     font-size: 25px;
 }
 
+.products-carrito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: flex-start; /* Alinear los elementos en la parte superior */
+    padding: 10px; /* Agregar espacio alrededor del contenido */
+    gap: 20px; /* Espacio entre los elementos internos */
+}
+
 .imagenproducto4 {
-	width: 35%; /* Ajusta el ancho de la imagen */
-    height: 90%; /* Ajusta la altura al 100% del cuadro */
+	width: 300px; /* Ajusta el ancho de la imagen */
+    height: 300px; /* Ajusta la altura al 100% del cuadro */
     object-fit: cover; /* Ajusta la imagen para que ocupe el espacio sin deformarse */
-    margin-left: 150px; /* Agrega un margen a la izquierda para separar la imagen del texto */
+    margin-left: 8px; /* Agrega un margen a la izquierda para separar la imagen del texto */
 }
 
 .nombre4 {
@@ -804,7 +823,7 @@ partecontainer1 {
     color:orange;
   /*  margin-bottom: 5px;  Agregar espacio de 20px debajo del párrafo */
     margin-top: 5px; /* Ajustar el margen superior según tu preferencia */
-	font-size: 40px; /* Tamaño de letra 20px */
+	font-size: 30px; /* Tamaño de letra 20px */
 }
 
 .precio4 {
@@ -816,7 +835,7 @@ partecontainer1 {
 
 .cuadrito4{
 	width: 40%; /* Ajusta el ancho del cuadro del texto */
-	margin: 0 30px;
+	margin: 0 20px;
 }
 
 .nombre4, .descripcion4, .precio4 {
@@ -857,7 +876,7 @@ partecontainer1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 0 150px;
+    margin: 0 10px;
     font-family: "Arial", sans-serif; /* Cambiar la fuente a Arial */
     font-size: 25px; /* Tamaño de letra 20px */
     
@@ -865,6 +884,7 @@ partecontainer1 {
 
 .bloque4{
 	display: flex;
+	
 }
 
 .bloque41{

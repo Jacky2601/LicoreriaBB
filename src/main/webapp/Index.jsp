@@ -13,13 +13,10 @@
             <img  class="logo" src="imagenes/LOGOLICO.jpeg"  alt=" ">
             </a>
         </div>
-        
-        
         <div class="locations-container">
             <a href="locales.jsp">
             LOCALES  
                 <img class="location-icon" src="imagenes/ubica.png" alt="">
-                
             </a>
         </div>
         <div class="login-container">
@@ -38,7 +35,7 @@
     	<% } %>
 		</div>
         <div class="cart-container">
-            <a href="carrito.jsp">
+            <a href="carritoCompras.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>
@@ -56,17 +53,17 @@
     </section>
     <section class="products-section">
         <!-- Aquí irá la sección de productos -->
-        <a href="Index.jsp">
+        <a href="catalogo?btnAccion=listarWhisky">
         <img class="panel-image" src="imagenes/produ.jpg" alt="Panel de Imagen">
         </a>
     </section>
     <section class="product-panel">
-    	<a href="Index.jsp">
+    	<a href="catalogo?btnAccion=buscarIDS&id=3">
         <img class="panel-image" src="imagenes/BAN1.jpg" alt="Panel de Imagen">
         </a>
     </section>
     <div class="buttons">
-    	<a href="catalogo?btnAccion=listarVino">
+    	<a href="catalogo?btnAccion=buscarIDS&id=3">
         <button class="buy-button">COMPRAR</button></a>
         <a href="catalogo?btnAccion=listarWhisky">
         <button class="view-more-button">VER MÁS</button></a>

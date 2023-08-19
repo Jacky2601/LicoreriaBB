@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pedido Venta</title>
+    <title>Realizado</title>
     <link rel="stylesheet" type="text/css" href="css/mis_estilos.css">
 </head>
 <body>
@@ -13,13 +13,10 @@
             <img  class="logo" src="imagenes/LOGOLICO.jpeg"  alt=" ">
             </a>
         </div>
-        
-        
         <div class="locations-container">
             <a href="locales.jsp">
             LOCALES  
                 <img class="location-icon" src="imagenes/ubica.png" alt="">
-                
             </a>
         </div>
         <div class="login-container">
@@ -38,24 +35,15 @@
     	<% } %>
 		</div>
         <div class="cart-container">
-            <a href="carrito.jsp">
+            <a href="carritoCompras.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>
 </header>
-    
-    <section class="">
-       
-    </section>
-    <section class="products-section">
-        <!-- Aquí irá la sección de productos -->
-       
-    </section>
-    
-    <div class="buttons">
-        <button class="buy-button">COMPRAR</button>
-        <button class="view-more-button">VER MÁS</button>
-    </div>
+
+
+
+
 <footer class="footer">
         <div class="disclaimer-bar">
             <p class="disclaimer-text">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>

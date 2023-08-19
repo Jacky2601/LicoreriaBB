@@ -23,7 +23,6 @@
             <a href="locales.jsp">
             LOCALES  
                 <img class="location-icon" src="imagenes/ubica.png" alt="">
-                
             </a>
         </div>
         <div class="login-container">
@@ -34,7 +33,6 @@
 	            <button class="cerrarsesion">
 	                <a class="botonusu" href="crudUsu?btnAccion=logout"> Cerrar Sesión</a>
 	            </button>
-	            
         	</div>
     	<% } else { %>
 	        <a href="login.jsp" id="ingreso1"> INGRESA O REGÍSTRATE 
@@ -43,7 +41,7 @@
     	<% } %>
 		</div>
         <div class="cart-container">
-            <a href="carrito.jsp">
+            <a href="carritoCompras.jsp">
                 <img class="cart-icon" id="r5" src="imagenes/CAR2.png" alt="Carrito de Compras">
             </a>
         </div>
