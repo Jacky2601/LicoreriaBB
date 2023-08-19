@@ -78,7 +78,20 @@
     <servlet-name>DetalleProductoServlet</servlet-name>
     <url-pattern>/DetalleProductoServlet</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>VentaServlet</display-name>
+    <servlet-name>VentaServlet</servlet-name>
+    <servlet-class>servlets.VentaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VentaServlet</servlet-name>
+    <url-pattern>/VentaServlet</url-pattern>
+  </servlet-mapping>
+
   <listener>
     <listener-class>servlets.ListenerSesiones</listener-class>
   </listener>
+
 </web-app>

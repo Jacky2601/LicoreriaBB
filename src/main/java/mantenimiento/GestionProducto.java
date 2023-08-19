@@ -155,14 +155,15 @@ public class GestionProducto implements ProductoInterface{
 			
 			
 			if (rs.next()) {
-			 p = new Producto(rs.getInt("id_producto"),
-					 		  rs.getInt("id_categoria"), 
-					 		  rs.getString("marca_prod"),
-					 		  rs.getString("descripcion"),
-					 		  rs.getDouble("precio"),
-					 		  rs.getInt("stock"),  
-					 		  rs.getInt("estado"));
-			 			 
+								 
+					 int id_categoria = rs.getInt("id_categoria"); 
+					 String marca_prod = rs.getString("marca_prod");
+					 String descripcion = rs.getString("descripcion");
+					 double precio = rs.getDouble("precio");
+					 int stock = rs.getInt("stock");  
+					 int estado = rs.getInt("estado");
+			 			
+					 p = new Producto(id_categoria, marca_prod, descripcion, precio, stock, estado);
 			}
 			
 		} catch (Exception e) {
